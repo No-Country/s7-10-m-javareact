@@ -1,6 +1,7 @@
-import { useSelector } from "react-redux";
+
 import { Navigate, Outlet } from "react-router-dom";
-import { AppStore } from "../../app/store";
+import { useAppSelector } from "../../app/hooks";
+import { getToken } from "../../app/state/authSlice";
 import { PublicRoutes } from "../../models/Routes";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 }
 
 export const AuthGuard = ({ privateValidation }: Props) => {
-  const token = useSelector((store: AppStore) => store.auth.token);
+  const token = useAppSelector(getToken);
 
   if (token && privateValidation === "must-logIn") return <Outlet />;
 
