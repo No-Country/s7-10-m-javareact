@@ -2,8 +2,9 @@ import React from "react";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Navigation } from "../../models/Navigation";
 
-const navigation = [
+const navigation: Navigation[] = [
   { name: "Home", href: "#", current: true },
   { name: "Categories", href: "#", current: false },
   { name: "FAQ", href: "#", current: false },
@@ -12,7 +13,7 @@ const navigation = [
 
 interface Props {}
 
-function classNames(...classes: any) {
+function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(" ");
 }
 
@@ -56,11 +57,11 @@ const Navbar = (props: Props) => {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? "bg-gray-900 text-white"
-                              : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                            "rounded-md px-3 py-2 text-sm font-medium"
+                              ? "rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white"
+                              : "rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                           )}
-                          aria-current={item.current ? "page" : undefined}>
+                          aria-current={item.current ? "page" : undefined}
+                        >
                           {item.name}
                         </a>
                       ))}
@@ -70,7 +71,8 @@ const Navbar = (props: Props) => {
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   <button
                     type="button"
-                    className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  >
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
@@ -94,7 +96,8 @@ const Navbar = (props: Props) => {
                       enterTo="transform opacity-100 scale-100"
                       leave="transition ease-in duration-75"
                       leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95">
+                      leaveTo="transform opacity-0 scale-95"
+                    >
                       <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <Menu.Item>
                           {({ active }) => (
@@ -103,7 +106,8 @@ const Navbar = (props: Props) => {
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
-                              )}>
+                              )}
+                            >
                               Your Profile
                             </a>
                           )}
@@ -115,7 +119,8 @@ const Navbar = (props: Props) => {
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
-                              )}>
+                              )}
+                            >
                               Settings
                             </a>
                           )}
@@ -127,7 +132,8 @@ const Navbar = (props: Props) => {
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-sm text-gray-700"
-                              )}>
+                              )}
+                            >
                               Sign out
                             </a>
                           )}
@@ -152,7 +158,8 @@ const Navbar = (props: Props) => {
                         : "text-gray-300 hover:bg-gray-700 hover:text-white",
                       "block rounded-md px-3 py-2 text-base font-medium"
                     )}
-                    aria-current={item.current ? "page" : undefined}>
+                    aria-current={item.current ? "page" : undefined}
+                  >
                     {item.name}
                   </Disclosure.Button>
                 ))}
