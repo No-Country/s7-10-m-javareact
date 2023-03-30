@@ -1,3 +1,5 @@
+import Navbar from "../Navbar/Navbar";
+
 type LayoutProps = {
   children: JSX.Element[] | JSX.Element;
 };
@@ -5,7 +7,7 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
-      <div>Header</div>
+      <Navbar/>
       {children}
       <div>Footer</div>
     </>
