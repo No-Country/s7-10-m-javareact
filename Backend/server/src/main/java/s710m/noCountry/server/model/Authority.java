@@ -13,7 +13,7 @@ import static javax.persistence.EnumType.STRING;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "authorities")
 @Setter
 @Getter
 @NoArgsConstructor

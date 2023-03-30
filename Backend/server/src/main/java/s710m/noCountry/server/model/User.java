@@ -1,5 +1,6 @@
 package s710m.noCountry.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -40,7 +41,7 @@ public class User implements UserDetails {
     private LocalDateTime creationDate;
 
     @ManyToMany(fetch = EAGER)
-    @JoinTable(name = "user_role",
+    @JoinTable(name = "user_authority",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Authority> authorities = new HashSet<>();
@@ -51,11 +52,10 @@ public class User implements UserDetails {
     @JsonIgnoreProperties("user")
     private Client client;*/
 
-    // Todo: uncomment this block of code
-    /*@OneToOne
+    @OneToOne
     @JoinColumn(name = "service_provider_id")
     @JsonIgnoreProperties("user")
-    private ServiceProvider serviceProvider;*/
+    private ServiceProvider serviceProvider;
 
     @Override
     public String getUsername() {
