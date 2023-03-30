@@ -7,7 +7,7 @@ export const initialAuth: InitialAuth = {
 };
 
 export const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState: initialAuth,
   reducers: {
     setLogin: (state, action) => {
@@ -16,6 +16,6 @@ export const authSlice = createSlice({
   }
 });
 
-export const { setLogin } = authSlice.actions; 
+export const { setLogin } = authSlice.actions;
 export const getToken = (state: RootState) => state.auth.token;
 export default authSlice.reducer;
