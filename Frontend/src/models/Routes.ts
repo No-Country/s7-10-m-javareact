@@ -1,7 +1,8 @@
 export enum PublicRoutes {
   HOME = "/",
   LOGIN = "login",
-  SIGNUP = "signup"
+  SIGNUPCLIENT = "signup-client",
+  SIGNUPPRO = "signup-pro"
 }
 
 export enum PrivateRoutes {
