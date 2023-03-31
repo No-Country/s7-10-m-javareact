@@ -1,5 +1,5 @@
 package s710m.noCountry.server.model.enums;
 
-public enum NameCategory {
+public enum NameServiceCategory {
     ELECTRICITY,PLUMBING,CONSTRUCTION
 }

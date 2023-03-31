@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import s710m.noCountry.server.model.enums.NameCategory;
+import s710m.noCountry.server.model.enums.NameServiceCategory;
 
 import javax.persistence.*;
 
@@ -16,12 +16,12 @@ import static javax.persistence.EnumType.STRING;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "service_category")
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Category {
+public class ServiceCategory {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -30,12 +30,12 @@ public class Category {
 
     @Enumerated(STRING)
     @Column(name = "name")
-    private NameCategory nameCategory;
+    private NameServiceCategory name;
 
     @ManyToMany
     @JoinTable(name = "category_provider",
             joinColumns = @JoinColumn(name = "category_id"),
             inverseJoinColumns = @JoinColumn(name = "provider_id"))
-    @JsonIgnoreProperties("categories")
+    @JsonIgnoreProperties("serviceCategories")
     private List<ServiceProvider> serviceProviders = new ArrayList<>();
 }

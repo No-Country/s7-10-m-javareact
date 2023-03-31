@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
@@ -23,6 +25,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@SQLDelete(sql = "UPDATE users SET deleted = true WHERE id = ?")
+@Where(clause = "deleted = false")
 public class User implements UserDetails {
 
     @Id
@@ -39,6 +43,9 @@ public class User implements UserDetails {
     @CreationTimestamp
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
+
+    @Column(name = "deleted")
+    private Boolean deleted = Boolean.FALSE;
 
     @ManyToMany(fetch = EAGER)
     @JoinTable(name = "user_authority",

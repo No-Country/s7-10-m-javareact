@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 
@@ -14,11 +16,13 @@ import java.util.List;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "service_providers")
+@Table(name = "service_provider")
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@SQLDelete(sql = "UPDATE service_provider SET deleted = true WHERE id = ?")
+@Where(clause = "deleted = false")
 public class ServiceProvider {
 
     @Id
@@ -34,19 +38,19 @@ public class ServiceProvider {
 
     @ManyToMany(mappedBy = "serviceProviders")
     @JsonIgnoreProperties("serviceProviders")
-    private List<Category> categories = new ArrayList<>();
+    private List<ServiceCategory> serviceCategories = new ArrayList<>();
 
     @Column(name = "experience_years")
     private String experienceYears;
 
+    @Column(name = "suggest_offers_from")
+    private String suggestOffersFrom;
+
     @Column(name = "km_around")
     private String kmAround;
 
-    @Column(name = "service_description")
-    private String serviceDescription;
-
-    @Column(name = "phone_number")
-    private String phoneNumber;
+    @Column(name = "deleted")
+    private Boolean deleted = Boolean.FALSE;
 
     @OneToOne
     @JoinColumn(name = "user_id")
