@@ -24,7 +24,7 @@ export default function AppRoute() {
             </Route>
             <Route element={<AuthGuard privateValidation={"must-not-logIn"} />}>
               <Route path={PublicRoutes.LOGIN} element={<LogIn />} />
-              <Route path={PublicRoutes.SIGNUP} element={<SignUp />} />
+              <Route path={PublicRoutes.SIGNUPCLIENT} element={<SignUp />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
