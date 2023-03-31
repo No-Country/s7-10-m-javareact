@@ -1,4 +1,3 @@
-
 import { Navigate, Outlet } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
 import { getToken } from "../../app/state/authSlice";
