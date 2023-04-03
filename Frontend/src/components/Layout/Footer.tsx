@@ -6,8 +6,8 @@ export const Footer = () => {
       <div className="py-4">
         <img src={footer} className=" w-auto m-auto" />
       </div>
-      <div className="justify-center bg-[#004E98]/70 py-8">
-        <div className="pb-8">
+      <div className="justify-center bg-[#004E98]/70 py-4">
+        <div className="pb-2">
           <svg
             width="250"
             height="100"
