@@ -20,14 +20,14 @@ export const Table = () => {
     <>
       <div className="m-auto max-w-7xl grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:md:grid-cols-6 p-0 gap-0">
         {images.slice(0, showAllImages ? images.length : numImagesToShow).map(profession => (
-          <>
-            <Link to="www.example.com">
+          
+            <Link to="www.example.com" key={profession.id}>
               <div className="bg-gray-100 w-28 h-28 sm:h-28 rounded-md m-auto hover:bg-gray-300 border-solid border-2 border-orange-500  flex justify-center mt-4">
                 <img src={profession.image} className="w-16 h-18 self-center" />
               </div>
               <p className="text-center pt-0 mt-1">{profession.title}</p>
             </Link>
-          </>
+          
         ))}
       </div>
       {!showAllImages && (
