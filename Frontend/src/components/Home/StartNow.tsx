@@ -18,6 +18,14 @@ const StartNow = (props: Props) => {
             professionals who are available and ready to help you.
           </p>
         </div>
+        <div className="justify-start px-4 py-4">
+          <p className="text-2xl font-semibold">Don't wait until it's too late!</p>
+        </div>
+        <div className="justify-center align-content-center px-4 py-6">
+          <p className="text-2xl font-normal rounded-[32px] text-center py-4 bg-[#FF9A1F] text-[#14213D] ">
+            Start Now
+          </p>
+        </div>
       </div>
     </>
   );
