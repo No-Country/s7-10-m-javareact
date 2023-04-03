@@ -1,4 +1,5 @@
 import Navbar from "../Navbar/Navbar";
+import { Footer } from "./Footer";
 // import Client from "../OnBoarding/Client";
 // import Provider from "../OnBoarding/Provider";
 
@@ -13,7 +14,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* <Client />
       <Provider /> */}
       {children}
-      <div>Footer</div>
+      <Footer />
     </>
   );
 }
