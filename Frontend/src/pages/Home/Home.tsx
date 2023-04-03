@@ -4,7 +4,7 @@ import { Header } from "../../components/Home/Header";
 
 export default function Home() {
   return (
-    <div className="sm:container m-auto p-6">
+    <div className="sm:container m-auto sm:p-12">
       <Header />
       <Table />
     </div>

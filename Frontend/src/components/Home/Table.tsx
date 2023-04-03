@@ -22,10 +22,10 @@ export const Table = () => {
         {images.slice(0, showAllImages ? images.length : numImagesToShow).map(profession => (
           <>
             <Link to="www.example.com">
-              <div className="bg-gray-100 w-28 h-28 sm:h-28 rounded-md m-auto hover:bg-gray-300 border-solid border-2 border-orange-500  flex justify-center">
+              <div className="bg-gray-100 w-28 h-28 sm:h-28 rounded-md m-auto hover:bg-gray-300 border-solid border-2 border-orange-500  flex justify-center mt-4">
                 <img src={profession.image} className="w-16 h-18 self-center" />
               </div>
-              <p className="text-center pt-0">{profession.title}</p>
+              <p className="text-center pt-0 mt-1">{profession.title}</p>
             </Link>
           </>
         ))}
@@ -37,7 +37,7 @@ export const Table = () => {
       )}
       {showAllImages && (
         <div className="w-12 h-12 m-auto cursor-pointer" onClick={handleHideAllImages}>
-          <AiOutlineMinusCircle className="w-full h-full animate-bounce" />
+          <AiOutlineMinusCircle className="w-full h-full mt-8 mb-8 animate-bounce" />
         </div>
       )}
     </>
