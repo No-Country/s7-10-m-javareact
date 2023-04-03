@@ -1,5 +1,6 @@
 package s710m.noCountry.server.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +12,9 @@ import org.hibernate.annotations.Where;
 import javax.persistence.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -60,4 +63,8 @@ public class ServiceProvider {
     /*@OneToMany(mappedBy = "serviceProvider")
     @JsonIgnoreProperties("serviceProvider")
     private Appointment appointment;*/
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "serviceProvider",fetch = FetchType.LAZY)
+    private Set<Appointment> appointment= new HashSet<>();
 }
