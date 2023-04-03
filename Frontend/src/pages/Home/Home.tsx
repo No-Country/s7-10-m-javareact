@@ -4,9 +4,12 @@ import { Header } from "../../components/Home/Header";
 
 export default function Home() {
   return (
-    <div className="sm:container m-auto sm:p-12">
+    <>
       <Header />
-      <Table />
-    </div>
+      <div className="container m-auto">
+        <Table />
+      </div>
+      
+    </>
   );
 }
