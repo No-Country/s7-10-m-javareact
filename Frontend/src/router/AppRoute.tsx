@@ -9,7 +9,8 @@ const Spinner = lazy(() => import("../components/Spinner/Spinner"));
 const Home = lazy(() => import("../pages/Home/Home"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
 const LogIn = lazy(() => import("../pages/LogIn/LogIn"));
-const SignUp = lazy(() => import("../pages/SignUp/SignUp"));
+const SignUpClient = lazy(() => import("../pages/SignUp/SignUpClient"));
+const SignUpPro = lazy(() => import("../pages/SignUp/SignUpPro"));
 const Profile = lazy(() => import("../pages/Profile/Profile"));
 
 export default function AppRoute() {
@@ -24,7 +25,8 @@ export default function AppRoute() {
             </Route>
             <Route element={<AuthGuard privateValidation={"must-not-logIn"} />}>
               <Route path={PublicRoutes.LOGIN} element={<LogIn />} />
-              <Route path={PublicRoutes.SIGNUPCLIENT} element={<SignUp />} />
+              <Route path={PublicRoutes.SIGNUPCLIENT} element={<SignUpClient />} />
+              <Route path={PublicRoutes.SIGNUPPRO} element={<SignUpPro />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

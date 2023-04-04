@@ -44,7 +44,7 @@ export const useImageStack = () => {
     { id: 15, image: painter, title: "Painter" },
     { id: 16, image: wallCovering, title: "Wall Covering" },
     { id: 17, image: floors, title: "Floors" },
-    { id: 18, image: washerTechnician, title: "Washer Technician" }
+    { id: 18, image: washerTechnician, title: "Washer" }
   ];
 
   return imageStack;

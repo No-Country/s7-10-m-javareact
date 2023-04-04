@@ -9,7 +9,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaEye } from "react-icons/fa";
 import Logo from "../../assets/logo.png";
 
-export default function SignUp() {
+export default function SignUpClient() {
   const [seePassword, setSeePassword] = useState<boolean>(false);
   const INITIAL__VALUES__SIGNUP__FORM: SignUpValues = {
     email: "",
