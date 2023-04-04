@@ -23,17 +23,17 @@ export default function SignUpPro() {
     kmAround: 0
   };
 
-  const addCategory = (category: string) : void => {
+  const addCategory = (category: string): void => {
     const tempCategories: string[] = [...categories];
     const foundIndex = tempCategories.findIndex(t => t === category);
-    if(foundIndex === -1) {
+    if (foundIndex === -1) {
       tempCategories.push(category);
       setCategories(tempCategories);
     } else {
-      tempCategories.splice(foundIndex,1);
+      tempCategories.splice(foundIndex, 1);
       setCategories(tempCategories);
-    }    
-  }
+    }
+  };
 
   return (
     <div className="flex h-full flex-col items-center justify-center px-4  py-8 sm:px-6 lg:px-8">
@@ -56,11 +56,11 @@ export default function SignUpPro() {
           initialValues={INITIAL__VALUES__SIGNUP__FORM}
           validationSchema={signUpProSchema}
           onSubmit={values => {
-            if(categories.length !== 0) {
-              values.categories = categories
-              console.log(values)
+            if (categories.length !== 0) {
+              values.categories = categories;
+              console.log(values);
             } else {
-              alert("Need to choose one category at least")
+              alert("Need to choose one category at least");
             }
           }}
         >
@@ -120,11 +120,10 @@ export default function SignUpPro() {
               </div>
 
               <div className="mt-5 ">
-                <label htmlFor="categories" className="w-full flex text-center justify-center	">Which services would you like to offer?</label>
-                <Categories 
-                  addCategory = {addCategory}
-                  categories = {categories}
-                />
+                <label htmlFor="categories" className="w-full flex text-center justify-center	">
+                  Which services would you like to offer?
+                </label>
+                <Categories addCategory={addCategory} categories={categories} />
               </div>
 
               <div className="mt-5">
@@ -148,7 +147,7 @@ export default function SignUpPro() {
                   <div className="mb-4 mt-1 text-xs text-red-600">{errors.kmAround}</div>
                 ) : null}
               </div>
-                 
+
               <button
                 className="group relative flex w-full justify-center rounded-3xl bg-[#004E98] px-3 py-3 text-sm font-semibold text-white hover:bg-[#004E98]/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mt-8"
                 type="submit"
@@ -161,7 +160,6 @@ export default function SignUpPro() {
                   Already have an account? <span className="text-[#004E98]">Log in!</span>
                 </Link>
               </div>
-
             </Form>
           )}
         </Formik>

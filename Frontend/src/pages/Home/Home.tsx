@@ -1,4 +1,3 @@
-
 import { Table } from "../../components/Home/Table";
 import { Header } from "../../components/Home/Header";
 import StartNow from "../../components/Home/StartNow";

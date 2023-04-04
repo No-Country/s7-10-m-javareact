@@ -11,7 +11,10 @@ export const Header = () => {
           <h3 className=" font-georama text-md text-white inline-block my-auto md:text-xl lg:text-3xl">
             Find the right professional for urgent home repairs after unexpected damage
           </h3>
-          <img src={logo} className="xs:m-4 xs:h-24 h-16 sm:h-28 md:h-36 lg:h-60 -translate-y-3 md:-translate-y-5 lg:-translate-y-10 lg:m-auto" />
+          <img
+            src={logo}
+            className="xs:m-4 xs:h-24 h-16 sm:h-28 md:h-36 lg:h-60 -translate-y-3 md:-translate-y-5 lg:-translate-y-10 lg:m-auto"
+          />
         </div>
       </div>
     </div>

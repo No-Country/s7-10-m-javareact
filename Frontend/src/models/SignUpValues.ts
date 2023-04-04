@@ -12,5 +12,5 @@ export type SignUpProValues = {
   country: string;
   categories: string[];
   experienceYears: number;
-  kmAround: number
+  kmAround: number;
 };
