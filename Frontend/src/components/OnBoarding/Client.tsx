@@ -66,7 +66,32 @@ const Client = (props: Props) => {
           </div>
         </div>
         <div className="text-sm px-4 py-4 text-center">
-          <p></p>
+          <ol className="list-decimal text-start py-4 mx-2">
+            <li className="py-2">
+              <span className="font-semibold">Create an Account:</span> To start using our platform,
+              you'll need to create an account. It's quick and easy - just provide your name, email
+              address, and a password.
+            </li>
+            <li className="py-2">
+              <span className="font-semibold">
+                Use our filters or choose from our list of professionals:
+              </span>
+              After creating your account, use our filters at the homepage with the details about
+              the damage you have. This will help us match you with professionals who have
+              experience in handling similar repairs.
+            </li>
+            <li className="py-2">
+              <span className="font-semibold">Choose your professionals:</span> Based on the details
+              you provide, we'll present you with a list of qualified professionals who are
+              available to help. You can view their profiles, see their ratings and reviews, and
+              choose the one that best fits your needs.
+            </li>
+            <li className="py-2">
+              <span className="font-semibold">Get Started:</span> Once you've chosen a professional,
+              you can get started right away. Our platform provides tools for communication and to
+              ensure that the repair process goes smoothly and you're always kept in the loop.
+            </li>
+          </ol>
         </div>
       </div>
       <div className="text-center align-content-center">
@@ -76,7 +101,7 @@ const Client = (props: Props) => {
           </button>
         </div>
         <div className="w-full">
-          <button className="bg-gray-50 hover:bg-gray-700 text-[#004E98] py-1 px-16 w-[250px] rounded-lg mb-2">
+          <button className="bg-[#004E98] hover:bg-gray-700 text-white py-2 px-16 w-[250px] rounded-full mb-2">
             Sign up
           </button>
         </div>
