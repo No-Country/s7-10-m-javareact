@@ -11,7 +11,7 @@ const SearchForm = () => {
         />
       </form>
       <div className="ml-2">
-        <IoLocationSharp className="text-gray-400 text-lg" />
+        <IoLocationSharp className="text-[#004E98] text-2xl" />
       </div>
     </div>
   );
