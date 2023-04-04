@@ -11,7 +11,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Navbar />
-      <Client />
+      {/* <Client /> */}
       {/* <Provider /> */}
       {children}
       <Footer />
