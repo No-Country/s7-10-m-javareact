@@ -17,7 +17,7 @@ export default function LogIn() {
   return (
     <div className="flex h-screen flex-col items-center justify-center px-4  sm:px-6 lg:px-8">
       <div className="flex flex-col w-full max-w-md justify-center items-center mb-4">
-        <img className="w-2/6 rounded-full mb-5" src={Logo} alt="logo" />
+        <img className="w-2/6  mb-5" src={Logo} alt="logo" />
         <p className="w-full text-xs">Login with</p>
       </div>
 
@@ -40,7 +40,7 @@ export default function LogIn() {
             <Form className="">
               <label htmlFor="email">Email address</label>
               <Field
-                className="relative block w-full rounded-md border-solid border-2 border-stone-500 py-1.5 text-gray-900  sm:text-sm sm:leading-6 mt-2 pl-2"
+                className="relative block w-full rounded-3xl border-solid border border-[#004E98] py-1.5 text-gray-900  sm:text-sm sm:leading-6 mt-2 pl-2"
                 name="email"
               />
               {errors.email && touched.email ? (
@@ -53,7 +53,7 @@ export default function LogIn() {
                 </label>
                 <div className="flex relative">
                   <Field
-                    className="block w-full rounded-md border-solid border-2 border-stone-500	 py-1.5 text-gray-900  sm:text-sm sm:leading-6 mt-2 pl-2"
+                    className="block w-full rounded-3xl border-solid border border-[#004E98]	 py-1.5 text-gray-900  sm:text-sm sm:leading-6 mt-2 pl-2"
                     name="password"
                     type={seePassword ? "text" : "password"}
                   />
@@ -70,18 +70,18 @@ export default function LogIn() {
               ) : null}
 
               <button
-                className="group relative flex w-full justify-center rounded-md bg-indigo-600 px-3 py-3 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-8"
+                className="group relative flex w-full justify-center rounded-3xl bg-[#004E98] px-3 py-3 text-sm font-semibold text-white hover:bg-[#004E98]/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  mt-8"
                 type="submit"
               >
                 Log In
               </button>
-              <button className="text-center w-full	mt-4 text-indigo-700" type="button">
+              <button className="text-center w-full	mt-4 text-[#004E98]" type="button">
                 Forgot your password?
               </button>
 
               <div className="w-100 flex items-center justify-center">
                 <Link to="/signup-client" className="w-full mt-4 self-center text-center	">
-                  Don't have an account yet? <span className="text-indigo-700">Sign up!</span>
+                  Don't have an account yet? <span className="text-[#004E98]">Sign up!</span>
                 </Link>
               </div>
             </Form>
