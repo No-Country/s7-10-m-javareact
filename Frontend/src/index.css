@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Cagliostro";
+  src: url("../src/assets/fonts/Cagliostro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Georama";
+  src: url("../src/assets/fonts/Georama-Regular.ttf");
+}
