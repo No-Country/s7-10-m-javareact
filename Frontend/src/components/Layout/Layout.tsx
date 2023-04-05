@@ -1,3 +1,4 @@
+import ButtonWithModal from "../Header/ButtonWithModal";
 import Navbar from "../Navbar/Navbar";
 import { Footer } from "./Footer";
 import Client from "../OnBoarding/Client";
