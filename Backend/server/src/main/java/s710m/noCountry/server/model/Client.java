@@ -27,6 +27,8 @@ public class Client {
     private Long id;
     
     private String fullName;
+
+    private String country;
     
     @OneToOne
     private User user;
