@@ -35,20 +35,20 @@ export const login = createAsyncThunk(
 );
 
 export const register = createAsyncThunk(
-    "user/register",
-    async ({ email, password }: { email: string; password: string }) => {
-      const apiProps: apiProps = {
-        path: "auth/register",
-        method: "post",
-        body: {
-          email, //aca faltan los datos a pasar para registrarse
-          password
-        }
-      };
-      const response = await useApi(apiProps);
-      return response.data;
-    }
-  );
+  "user/register",
+  async ({ email, password }: { email: string; password: string }) => {
+    const apiProps: apiProps = {
+      path: "auth/register",
+      method: "post",
+      body: {
+        email, //aca faltan los datos a pasar para registrarse
+        password
+      }
+    };
+    const response = await useApi(apiProps);
+    return response.data;
+  }
+);
 
 export const userSlice = createSlice({
   name: "user",

@@ -6,7 +6,7 @@ const SearchForm = () => {
       <form className="flex items-center rounded-3x border-2 rounded-3xl border-gray-300 px-2 py-1 mb-5 mt-5 flex-1">
         <input
           type="text"
-          placeholder="🔍︎  search"
+          placeholder="🔍︎  Search"
           className="w-full py-1 px-2 font-georama rounded-md focus:outline-none focus:border-blue-500"
         />
       </form>
