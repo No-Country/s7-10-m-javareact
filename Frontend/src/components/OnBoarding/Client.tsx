@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -12,10 +13,10 @@ const Client = (props: Props) => {
               className="max-w-[425px] min-h-fit opacity-80"
               src="https://img.freepik.com/foto-gratis/necesito-ayuda-mujer-infeliz-agachada-cerca-grifo-agua-que-gotea-casa_259150-58305.jpg?w=1060&t=st=1680649079~exp=1680649679~hmac=198b0d50b93a842e5492b70759f58e5154992d789febe8367bf294fe70bc223c"
             />
-          </div>
-          <p className="text-md text-start absolute top-20 text-[#FF9A1F] font-semibold text-3xl mx-4">
+          <p className="text-md text-start absolute top-2 text-[#FF9A1F] font-semibold text-3xl mx-4">
             Do you have a Breakdown at Home?
           </p>
+          </div>
           <div className="justify-start bg-[#FF9A1F]">
             <div className="mx-4 py-4 text-start">
               <p className="text-2xl py-2 font-semibold text-[#14213D]">Find a service provider</p>
@@ -60,18 +61,22 @@ const Client = (props: Props) => {
         </div>
       </div>
       <div className="text-center align-content-center">
-        <div className="w-full">
-          <button className="bg-[#004E98] hover:bg-gray-700 text-white py-2 px-16 w-[250px] rounded-full mb-2">
+        <div className="w-full py-4">
+          <Link
+            to="/login"
+            className="bg-[#004E98] hover:bg-gray-700 text-white px-16 w-[250px] rounded-full py-4">
             Login
-          </button>
+          </Link>
         </div>
-        <div className="w-full">
-          <button className="bg-[#004E98] hover:bg-gray-700 text-white py-2 px-16 w-[250px] rounded-full mb-2">
+        <div className="w-full py-4">
+          <Link
+            to="signup-client"
+            className="bg-[#004E98] hover:bg-gray-700 text-white px-16 w-[250px] rounded-full py-4">
             Sign up
-          </button>
+          </Link>
         </div>
-        <div className="w-full py-5">
-          <span className="text-[#5046E5]">I want to offer a service</span>
+        <div className="w-full py-4">
+          <Link to='/onboarding/provider' className="text-[#5046E5]">I want to offer a service</Link>
         </div>
       </div>
     </div>
