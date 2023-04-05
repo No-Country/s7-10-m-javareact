@@ -27,7 +27,7 @@ const customStyles = {
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   return (
-    <ReactModal style={customStyles} isOpen={isOpen} onRequestClose={onClose}>
+    <ReactModal ariaHideApp={false} style={customStyles} isOpen={isOpen} onRequestClose={onClose}>
       {children}
     </ReactModal>
   );

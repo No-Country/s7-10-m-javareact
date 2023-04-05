@@ -17,7 +17,6 @@ export default function LogIn() {
   return (
     <div className="flex h-screen flex-col items-center justify-center px-4  sm:px-6 lg:px-8">
       <div className="flex flex-col w-full max-w-md justify-center items-center mb-4">
-        <img className="w-2/6  mb-5" src={Logo} alt="logo" />
         <p className="w-full text-xs">Login with</p>
       </div>
 
