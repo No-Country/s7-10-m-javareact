@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 
 export interface apiProps {
   token?: string;
@@ -9,9 +9,14 @@ export interface apiProps {
 
 const baseUrl = import.meta.env.VITE_BASE_URL_API || "http://localhost:8080/api";
 
-export const useApi = async ({ path, body, method, token }: apiProps) => {
-  let finalUrl = `${baseUrl}/${path}`;
-  let options: AxiosRequestConfig = {
+export const useApi = async <T>({
+  path,
+  body,
+  method,
+  token
+}: apiProps): Promise<AxiosResponse<T>> => {
+  const finalUrl = `${baseUrl}/${path}`;
+  const options: AxiosRequestConfig = {
     method: method,
     url: finalUrl,
     headers: {
@@ -22,13 +27,9 @@ export const useApi = async ({ path, body, method, token }: apiProps) => {
     data: body
   };
   try {
-    const res = await axios(options);
-    return {
-      status: res.status,
-      data: res.data
-    };
+    const response = await axios(options);
+    return response;
   } catch (error) {
-    console.log(error);
-    return error;
+    throw error as AxiosError;
   }
 };
