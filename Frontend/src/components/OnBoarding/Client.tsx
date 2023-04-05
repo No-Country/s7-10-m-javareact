@@ -10,7 +10,7 @@ const Client = (props: Props) => {
         <div className="text-start ">
           <div className="relative">
             <img
-              className="max-w-[425px] min-h-fit opacity-80"
+              className="min-h-fit opacity-80"
               src="https://img.freepik.com/foto-gratis/necesito-ayuda-mujer-infeliz-agachada-cerca-grifo-agua-que-gotea-casa_259150-58305.jpg?w=1060&t=st=1680649079~exp=1680649679~hmac=198b0d50b93a842e5492b70759f58e5154992d789febe8367bf294fe70bc223c"
             />
           <p className="text-md text-start absolute top-2 text-[#FF9A1F] font-semibold text-3xl mx-4">
@@ -60,18 +60,18 @@ const Client = (props: Props) => {
           </ol>
         </div>
       </div>
-      <div className="text-center align-content-center">
-        <div className="w-full py-4">
+      <div className="text-center align-content-center w-full justify-center" >
+        <div className="py-4 flex justify-center">
           <Link
             to="/login"
-            className="bg-[#004E98] hover:bg-gray-700 text-white px-16 w-[250px] rounded-full py-4">
+            className="text-center bg-[#004E98] hover:bg-gray-700 text-white w-[300px] rounded-full py-3">
             Login
           </Link>
         </div>
-        <div className="w-full py-4">
+        <div className="py-4 flex justify-center">
           <Link
-            to="signup-client"
-            className="bg-[#004E98] hover:bg-gray-700 text-white px-16 w-[250px] rounded-full py-4">
+            to="/signup-client"
+            className="text-center bg-[#004E98] hover:bg-gray-700 text-white w-[300px] rounded-full py-3">
             Sign up
           </Link>
         </div>
