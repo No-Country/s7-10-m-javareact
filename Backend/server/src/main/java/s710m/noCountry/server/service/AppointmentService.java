@@ -9,5 +9,16 @@ import java.util.Optional;
 public interface AppointmentService {
 
 
+    public Appointment saveAppointment(Appointment appointment) throws Exception;
+
+    public void deleteAppointment(Long appointmentId);
+
+    public List<Appointment> getAllAppointments();
+
+    public ResponseEntity<Appointment> updateAppointment (Appointment appointment );
+
+    public Optional<Appointment> searchById(Long id);
+
+
 
 }
