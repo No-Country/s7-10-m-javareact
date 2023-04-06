@@ -4,7 +4,7 @@ package s710m.noCountry.server.service.serviceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import s710m.noCountry.server.configException.RegistroFoundException;
+import s710m.noCountry.server.configException.EntityFoundException;
 import s710m.noCountry.server.model.Appointment;
 import s710m.noCountry.server.repository.AppointmentRepository;
 import s710m.noCountry.server.service.AppointmentService;
@@ -28,7 +28,7 @@ public class AppointmentServiceImpl implements AppointmentService {
         Appointment turnoLocal= repository.findByFecha(LocalDateTime.parse(appointment.getFecha().toString()));
         if(turnoLocal != null){
             System.out.println("El turno ya existe");
-            throw new RegistroFoundException();
+            throw new EntityFoundException();
         }
         else {
             turnoLocal=repository.save(appointment);

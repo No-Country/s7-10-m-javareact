@@ -1,14 +1,14 @@
 package s710m.noCountry.server.service;
 
 import s710m.noCountry.server.model.ServiceCategory;
-import s710m.noCountry.server.model.dto.ServiceCategoryDto;
-import s710m.noCountry.server.model.dto.ServiceProviderDto;
+import s710m.noCountry.server.model.dto.ServiceCategoryResponseDto;
+import s710m.noCountry.server.model.dto.ServiceProviderResponseDto;
 
 import java.util.List;
 
 public interface ServiceCategoryService {
 
-    List<ServiceCategoryDto> getAllServiceCategories();
-    List<ServiceProviderDto> getAllServiceProvidersByCategory(Long id);
+    List<ServiceCategoryResponseDto> getAllServiceCategories();
+    List<ServiceProviderResponseDto> getAllServiceProvidersByCategory(Long id);
     ServiceCategory getById(Long id);
 }

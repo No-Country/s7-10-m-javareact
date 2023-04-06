@@ -2,13 +2,13 @@ package s710m.noCountry.server.mapper;
 
 import org.springframework.stereotype.Component;
 import s710m.noCountry.server.model.ServiceProvider;
-import s710m.noCountry.server.model.dto.ServiceProviderDto;
+import s710m.noCountry.server.model.dto.ServiceProviderResponseDto;
 
 @Component
 public class ServiceProviderMapper {
 
-    public ServiceProviderDto toDto(ServiceProvider serviceProvider){
-        ServiceProviderDto dto = new ServiceProviderDto();
+    public ServiceProviderResponseDto toDto(ServiceProvider serviceProvider){
+        ServiceProviderResponseDto dto = new ServiceProviderResponseDto();
         dto.setIdUser(serviceProvider.getUser().getId());
         dto.setEmail(serviceProvider.getUser().getUsername());
         dto.setFullName(serviceProvider.getFullName());
