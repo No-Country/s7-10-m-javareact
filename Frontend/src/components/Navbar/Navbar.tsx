@@ -4,12 +4,13 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Navigation } from "../../models/Navigation";
 import ButtonWithModal from "../Header/ButtonWithModal";
+import { Link } from "react-router-dom";
 
 const navigation: Navigation[] = [
-  { name: "Home", href: "#", current: true },
-  { name: "Categories", href: "#", current: false },
-  { name: "FAQ", href: "#", current: false },
-  { name: "Search", href: "#", current: false }
+  { name: "Home", href: "/", current: true },
+  { name: "Categories", href: "/", current: false },
+  { name: "FAQ", href: "/", current: false },
+  { name: "Search", href: "/", current: false }
 ];
 
 interface Props {}
@@ -41,9 +42,9 @@ const Navbar = (props: Props) => {
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4">
                       {navigation.map(item => (
-                        <a
+                        <Link
                           key={item.name}
-                          href={item.href}
+                          to={item.href}
                           className={classNames(
                             item.current
                               ? "rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white"
@@ -52,7 +53,7 @@ const Navbar = (props: Props) => {
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
