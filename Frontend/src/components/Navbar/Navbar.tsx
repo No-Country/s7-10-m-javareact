@@ -58,7 +58,7 @@ const Navbar = (props: Props) => {
                     </div>
                   </div>
                 </div>
-                <ButtonWithModal/>
+                <ButtonWithModal />
               </div>
             </div>
 
