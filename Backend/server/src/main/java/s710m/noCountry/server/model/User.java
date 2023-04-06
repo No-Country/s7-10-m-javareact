@@ -53,11 +53,10 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Authority> authorities = new HashSet<>();
 
-    // Todo: uncomment this block of code
-    /*@OneToOne
+    @OneToOne
     @JoinColumn(name = "client_id")
     @JsonIgnoreProperties("user")
-    private Client client;*/
+    private Client client;
 
     @OneToOne
     @JoinColumn(name = "service_provider_id")
