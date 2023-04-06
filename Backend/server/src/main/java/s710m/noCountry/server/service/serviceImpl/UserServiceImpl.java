@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
         );
         User user = repository.findByEmail(dto.getEmail()).orElseThrow();
         String authority = user.getAuthorities().stream().map(Authority::getAuthority).collect(Collectors.toList()).get(0);
-        if (authority.equals(NameAuthority.ROLE_CLIENT)){
+        if (authority.equals(NameAuthority.ROLE_CLIENT.name())){
             String token = jwtService.generateToken(user);
             return mapper.toClientDto(user, user.getClient(),token);
         }
