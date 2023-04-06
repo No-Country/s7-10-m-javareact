@@ -29,13 +29,11 @@ public class AppointmentController {
         return new ResponseEntity<>(listAppoitment, HttpStatus.OK);
     }
 
-
-
-
     ////End point para actualizar todos los turnos PUT= "/turnos/"
-    @PutMapping
-    public ResponseEntity<Appointment> update(@RequestBody Appointment appointment) {
-        return service.updateAppointment(appointment);
+    @PutMapping("{id}")
+    public ResponseEntity<Appointment> update(@PathVariable Long id, @RequestBody Appointment appointment) {
+        Appointment updatedAppointment = service.updateAppointment(id,appointment);
+        return new ResponseEntity<>(updatedAppointment, HttpStatus.OK);
     }
 
 
@@ -45,7 +43,6 @@ public class AppointmentController {
         Appointment   appointmentCreated= service.saveAppointment(appointment);
         return new ResponseEntity<>(appointmentCreated, HttpStatus.CREATED);
     }
-
 
     ////End point para eliminar por id todos los turnos DELETE= "/turnos/3"
     @DeleteMapping("{appointmentId}")

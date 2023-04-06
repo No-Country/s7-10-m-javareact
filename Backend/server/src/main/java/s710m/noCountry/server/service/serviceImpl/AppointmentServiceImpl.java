@@ -1,10 +1,8 @@
 package s710m.noCountry.server.service.serviceImpl;
 
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import s710m.noCountry.server.configException.EntityFoundException;
+import s710m.noCountry.server.configException.EntityNotFoundException;
 import s710m.noCountry.server.model.Appointment;
 import s710m.noCountry.server.repository.AppointmentRepository;
 import s710m.noCountry.server.service.AppointmentService;
@@ -25,20 +23,20 @@ public class AppointmentServiceImpl implements AppointmentService {
 
     @Override
     public Appointment saveAppointment(Appointment appointment) throws Exception {
-        Appointment turnoLocal= repository.findByFecha(LocalDateTime.parse(appointment.getFecha().toString()));
-        if(turnoLocal != null){
-            System.out.println("El turno ya existe");
-            throw new EntityFoundException();
+        Appointment appointmentLocal= repository.findByDate(LocalDateTime.parse(appointment.getDate().toString()));
+        if(appointmentLocal != null){
+            System.out.println("This date and time are reserved");
+            throw new EntityFoundException("This date and time are reserved");
         }
         else {
-            turnoLocal=repository.save(appointment);
+            appointmentLocal=repository.save(appointment);
         }
-
-        return turnoLocal;
+        return appointmentLocal;
     }
 
     @Override
     public void deleteAppointment(Long appointmentId) {
+        searchById(appointmentId);
         repository.deleteById(appointmentId);
     }
 
@@ -48,19 +46,21 @@ public class AppointmentServiceImpl implements AppointmentService {
     }
 
     @Override
-    public ResponseEntity<Appointment> updateAppointment(Appointment appointment) {
+    public Appointment updateAppointment(Long id, Appointment appointment) {
+        searchById(id).get();
         Appointment appointment1= repository.save(appointment);
-        return new ResponseEntity<Appointment>(appointment1, HttpStatus.OK);
+        return appointment1;
     }
 
     @Override
     public Optional<Appointment> searchById(Long id) {
-        Optional<Appointment> turno = repository.findById(id);
-        if (!turno.isPresent()) {
-            String mensaje= "El turno cod id= "+ id.toString()+" no existe (searchById)";
-            System.out.println(mensaje);
+        Optional<Appointment> appointment = repository.findById(id);
+        if (!appointment.isPresent()) {
+            String message= "This appointment with id "+ id.toString()+" does not exists";
+            System.out.println(message);
+            throw new EntityNotFoundException(message);
         }
-        return turno;
+        return appointment;
     }
 }
 //primero debo crear cliente - prestador - turno

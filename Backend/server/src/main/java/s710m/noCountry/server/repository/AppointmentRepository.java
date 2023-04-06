@@ -7,5 +7,5 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public interface AppointmentRepository extends JpaRepository<Appointment,Long> {
-    Appointment findByFecha(LocalDateTime turno);
+    Appointment findByDate(LocalDateTime appointment);
 }

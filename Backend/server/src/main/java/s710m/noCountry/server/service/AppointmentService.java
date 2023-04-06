@@ -15,7 +15,7 @@ public interface AppointmentService {
 
     public List<Appointment> getAllAppointments();
 
-    public ResponseEntity<Appointment> updateAppointment (Appointment appointment );
+    public Appointment updateAppointment (Long id, Appointment appointment );
 
     public Optional<Appointment> searchById(Long id);
 
