@@ -4,10 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import s710m.noCountry.server.model.ServiceCategory;
 import s710m.noCountry.server.model.dto.ServiceCategoryDto;
+import s710m.noCountry.server.model.dto.ServiceProviderDto;
 import s710m.noCountry.server.service.ServiceCategoryService;
 
 import java.util.List;
@@ -24,6 +26,11 @@ public class ServiceCategoryController {
     @GetMapping
     public ResponseEntity<List<ServiceCategoryDto>> getAllServiceCategory(){
         return ResponseEntity.status(OK).body(service.getAllServiceCategories());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<List<ServiceProviderDto>> getAllServiceProvidersByCategory(@PathVariable Long id){
+        return ResponseEntity.status(OK).body(service.getAllServiceProvidersByCategory(id));
     }
 
 }
