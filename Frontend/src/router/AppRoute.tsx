@@ -14,6 +14,7 @@ const SignUpPro = lazy(() => import("../pages/SignUp/SignUpPro"));
 const Profile = lazy(() => import("../pages/Profile/Profile"));
 const Provider = lazy(() => import("../components/OnBoarding/Provider"))
 const Client = lazy(() => import("../components/OnBoarding/Client"))
+const ProfessionalDetail = lazy(() => import("../pages/ProfessionalDetail/ProfessionalDetail"))
 
 export default function AppRoute() {
   return (
@@ -31,6 +32,7 @@ export default function AppRoute() {
               <Route path={PublicRoutes.SIGNUPPRO} element={<SignUpPro />} />
               <Route path={PublicRoutes.ONBOARDINGCLIENT} element={<Client />} />
               <Route path={PublicRoutes.ONBOARDINGPROVIDER} element={<Provider />} />
+              <Route path={PublicRoutes.PROFESSIONALDETAIL} element={<ProfessionalDetail />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
