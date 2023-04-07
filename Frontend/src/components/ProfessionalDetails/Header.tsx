@@ -33,7 +33,21 @@ const userData = [
     ],
     gallery: {
       url: ["url", "url", "url", "url"]
-    }
+    },
+    reviews: [
+      {
+        reviewer: "Juan",
+        date: "08/05/22",
+        text: "I would highly recommend this plumbing service to anyone in need of plumbing repairs. Jack and his team are skilled, reliable, and provide excellent customer service. I will definitely be using them again in the future.",
+        stars: 4.8
+      },
+      {
+        reviewer: "Antonella",
+        date: "28/07/22",
+        text: "He was polite, professional, and took the time to listen to my concerns and explain what needed to be done. He was able to quickly diagnose the problem and provide me with a quote, which was very reasonable.",
+        stars: 4.5
+      }
+    ]
   }
 ];
 
