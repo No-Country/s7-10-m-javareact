@@ -1,8 +1,9 @@
 {
   "name": "Jack",
+  "picture": "https://cdn-boadd.nitrocdn.com/dFVpCkCQuyKKGCvsieWgIJjyQLauwWHh/assets/images/optimized/rev-40463ed/wp-content/uploads/2015/11/VIGILANT-plumber-fixing-a-sink-shutterstock_132523334-e1448389230378-620x400.jpg",
   "serviceCategories": [
     {
-      "role": "tag",
+      "role": "Plumber",
       "order": "1"
     },
     {
@@ -19,6 +20,9 @@
     }
   ],
   "stars": "4.6",
+  "experience": "12 years",
+  "state": "Buenos Aires",
+  "country": "Argentina",
   "description": {
     "text": "Hello, my name is Jack and I've been a plumber for over 10 years. I started my career as an apprentice, learning the ropes from experienced plumbers and gradually building up my skills and knowledge."
   },
