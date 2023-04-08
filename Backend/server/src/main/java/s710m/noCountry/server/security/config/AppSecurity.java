@@ -22,6 +22,7 @@ public class AppSecurity {
     private final AuthenticationProvider authenticationProvider;
     private final AccessDeniedHandler accessDeniedHandler;
     private final AuthenticationEntryPoint authenticationEntryPoint;
+    private static final String[] PERMIT_ALL = {"/auth/**", "/service-categories/**"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -29,7 +30,7 @@ public class AppSecurity {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .antMatchers("/auth/login", "/auth/register-client", "/auth/register-service-provider")
+                .antMatchers(PERMIT_ALL)
                 .permitAll()
                 .anyRequest()
                 .authenticated()

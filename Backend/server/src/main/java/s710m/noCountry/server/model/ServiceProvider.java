@@ -60,10 +60,6 @@ public class ServiceProvider {
     @JsonIgnoreProperties("serviceProvider")
     private User user;
 
-    /*@OneToMany(mappedBy = "serviceProvider")
-    @JsonIgnoreProperties("serviceProvider")
-    private Appointment appointment;*/
-
     @JsonIgnore
     @OneToMany(mappedBy = "serviceProvider",fetch = FetchType.LAZY)
     private Set<Appointment> appointment= new HashSet<>();
