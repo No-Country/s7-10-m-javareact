@@ -1,7 +1,8 @@
 package s710m.noCountry.server.service;
 
-import org.springframework.http.ResponseEntity;
 import s710m.noCountry.server.model.Appointment;
+import s710m.noCountry.server.model.dto.AppointmentRequestDto;
+import s710m.noCountry.server.model.dto.AppointmentResponseDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +10,7 @@ import java.util.Optional;
 public interface AppointmentService {
 
 
-    public Appointment saveAppointment(Appointment appointment) throws Exception;
+    public AppointmentResponseDto saveAppointment(AppointmentRequestDto dto) throws Exception;
 
     public void deleteAppointment(Long appointmentId);
 

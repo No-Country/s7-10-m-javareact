@@ -1,9 +1,13 @@
 package s710m.noCountry.server.service.serviceImpl;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import s710m.noCountry.server.configException.EntityFoundException;
 import s710m.noCountry.server.configException.EntityNotFoundException;
+import s710m.noCountry.server.mapper.AppointmentMapper;
 import s710m.noCountry.server.model.Appointment;
+import s710m.noCountry.server.model.dto.AppointmentRequestDto;
+import s710m.noCountry.server.model.dto.AppointmentResponseDto;
 import s710m.noCountry.server.repository.AppointmentRepository;
 import s710m.noCountry.server.service.AppointmentService;
 
@@ -12,26 +16,24 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class AppointmentServiceImpl implements AppointmentService {
 
     private  final AppointmentRepository repository;
-
-    public AppointmentServiceImpl(AppointmentRepository repository) {
-        this.repository = repository;
-    }
+    private final AppointmentMapper mapper;
 
 
     @Override
-    public Appointment saveAppointment(Appointment appointment) throws Exception {
-        Appointment appointmentLocal= repository.findByDate(LocalDateTime.parse(appointment.getDate().toString()));
-        if(appointmentLocal != null){
+    public AppointmentResponseDto saveAppointment(AppointmentRequestDto dto) throws Exception {
+        Appointment appointment = repository.findByDate(LocalDateTime.parse(dto.getDate().toString()));
+        if(appointment != null){
             System.out.println("This date and time are reserved");
             throw new EntityFoundException("This date and time are reserved");
         }
         else {
-            appointmentLocal=repository.save(appointment);
+            appointment=repository.save(mapper.toEntity(dto));
         }
-        return appointmentLocal;
+        return mapper.toDto(appointment);
     }
 
     @Override
@@ -63,4 +65,3 @@ public class AppointmentServiceImpl implements AppointmentService {
         return appointment;
     }
 }
-//primero debo crear cliente - prestador - turno

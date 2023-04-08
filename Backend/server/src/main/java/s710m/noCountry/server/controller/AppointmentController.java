@@ -1,10 +1,13 @@
 package s710m.noCountry.server.controller;
 
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import s710m.noCountry.server.model.Appointment;
+import s710m.noCountry.server.model.dto.AppointmentRequestDto;
+import s710m.noCountry.server.model.dto.AppointmentResponseDto;
 import s710m.noCountry.server.service.AppointmentService;
 
 import javax.persistence.EntityNotFoundException;
@@ -14,13 +17,10 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/appointment/")
 @CrossOrigin(origins = "http://localhost:3000")
+@RequiredArgsConstructor
 public class AppointmentController {
 
     private final AppointmentService service;
-
-    public AppointmentController(AppointmentService service) {
-        this.service = service;
-    }
 
     ////End point para obtener todos los turnos GET= "/turnos/"
     @GetMapping
@@ -39,8 +39,8 @@ public class AppointmentController {
 
     ////End point para guardar  turnos POST= "/turnos/"
     @PostMapping
-    public ResponseEntity<Appointment> save(@RequestBody Appointment appointment) throws Exception {
-        Appointment   appointmentCreated= service.saveAppointment(appointment);
+    public ResponseEntity<AppointmentResponseDto> save(@RequestBody AppointmentRequestDto dto) throws Exception {
+        AppointmentResponseDto appointmentCreated= service.saveAppointment(dto);
         return new ResponseEntity<>(appointmentCreated, HttpStatus.CREATED);
     }
 
