@@ -12,7 +12,7 @@ import s710m.noCountry.server.service.UserService;
 import static org.springframework.http.HttpStatus.*;
 
 @RestController
-@RequestMapping("auth")
+@RequestMapping("api/auth")
 @RequiredArgsConstructor
 public class AuthController {
 
