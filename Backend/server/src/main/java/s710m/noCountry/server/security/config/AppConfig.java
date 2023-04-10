@@ -13,6 +13,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import s710m.noCountry.server.security.exception.CustomAccessDeniedHandler;
 import s710m.noCountry.server.security.exception.CustomAuthenticationEntryPoint;
 import s710m.noCountry.server.repository.UserRepository;
@@ -22,6 +24,16 @@ import s710m.noCountry.server.repository.UserRepository;
 public class AppConfig {
 
     private final UserRepository repository;
+    protected final String[] ALLOWED_ORIGINS = {
+            "http://localhost",
+            "http://localhost:3000"
+    };
+    protected final String[] ALLOWED_METHODS = {
+            "GET",
+            "POST",
+            "PATCH",
+            "DELETE"
+    };
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -55,5 +67,18 @@ public class AppConfig {
     @Bean
     public AuthenticationEntryPoint authenticationEntryPoint() {
         return new CustomAuthenticationEntryPoint();
+    }
+
+    @Bean
+    public WebMvcConfigurer corsConfigure() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/api/**")
+                        .allowedOrigins(ALLOWED_ORIGINS)
+                        .allowedMethods(ALLOWED_METHODS);
+            }
+
+        };
     }
 }
