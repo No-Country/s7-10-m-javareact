@@ -52,6 +52,15 @@ public class ServiceProvider {
     @Column(name = "km_around")
     private String kmAround;
 
+    @Column(name = "profile_photo")
+    private String profilePhoto;
+
+    @Column(name = "profile_description")
+    private String profileDescription;
+
+    @ElementCollection(targetClass = String.class)
+    private List<String> galleryPhotos = new ArrayList<>();
+
     @Column(name = "deleted")
     private Boolean deleted = Boolean.FALSE;
 
