@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class Appointment {
     private String problemDescription;
 
     @ElementCollection(targetClass = String.class)
-    private List<String> problemPhotos;
+    private List<String> problemPhotos = new ArrayList<>();
 
     @Column
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
