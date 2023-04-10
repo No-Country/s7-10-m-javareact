@@ -2,6 +2,7 @@ package s710m.noCountry.server.service.serviceImpl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import s710m.noCountry.server.configException.EntityFoundException;
 import s710m.noCountry.server.configException.EntityNotFoundException;
 import s710m.noCountry.server.mapper.AppointmentMapper;
@@ -24,6 +25,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 
 
     @Override
+    @Transactional
     public AppointmentResponseDto saveAppointment(AppointmentRequestDto dto) throws Exception {
         Appointment appointment = repository.findByDate(LocalDateTime.parse(dto.getDate().toString()));
         if(appointment != null){

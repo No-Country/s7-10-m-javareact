@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/appointment/")
+@RequestMapping("/api/appointment")
 @CrossOrigin(origins = "http://localhost:3000")
 @RequiredArgsConstructor
 public class AppointmentController {
@@ -25,12 +25,12 @@ public class AppointmentController {
     ////End point para obtener todos los turnos GET= "/turnos/"
     @GetMapping
     public ResponseEntity<List<Appointment>> getAll() {
-        List<Appointment>listAppoitment= service.getAllAppointments();
-        return new ResponseEntity<>(listAppoitment, HttpStatus.OK);
+        List<Appointment>listAppointment= service.getAllAppointments();
+        return new ResponseEntity<>(listAppointment, HttpStatus.OK);
     }
 
     ////End point para actualizar todos los turnos PUT= "/turnos/"
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Appointment> update(@PathVariable Long id, @RequestBody Appointment appointment) {
         Appointment updatedAppointment = service.updateAppointment(id,appointment);
         return new ResponseEntity<>(updatedAppointment, HttpStatus.OK);
@@ -40,19 +40,19 @@ public class AppointmentController {
     ////End point para guardar  turnos POST= "/turnos/"
     @PostMapping
     public ResponseEntity<AppointmentResponseDto> save(@RequestBody AppointmentRequestDto dto) throws Exception {
-        AppointmentResponseDto appointmentCreated= service.saveAppointment(dto);
-        return new ResponseEntity<>(appointmentCreated, HttpStatus.CREATED);
+        AppointmentResponseDto createdAppointment= service.saveAppointment(dto);
+        return new ResponseEntity<>(createdAppointment, HttpStatus.CREATED);
     }
 
     ////End point para eliminar por id todos los turnos DELETE= "/turnos/3"
-    @DeleteMapping("{appointmentId}")
+    @DeleteMapping("/{appointmentId}")
     public void delete(@PathVariable("appointmentId") Long appointmentId) {
         service.deleteAppointment(appointmentId);
     }
 
 
     ////End point para obtener  POR ID todos los turnos GET= "/turnos/3"
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Optional<Appointment>> searchById(@PathVariable Long id) throws EntityNotFoundException {
         Optional<Appointment> appointment= service.searchById(id);
         return new ResponseEntity<>(appointment,HttpStatus.OK);
