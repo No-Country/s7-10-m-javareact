@@ -3,6 +3,7 @@ import Header from "../../components/ProfessionalDetails/Header";
 import Descriptions from "../../components/ProfessionalDetails/Descriptions";
 import FirstVisit from "../../components/ProfessionalDetails/FirstVisit";
 import Gallery from "../../components/ProfessionalDetails/Gallery";
+import Reviews from "../../components/ProfessionalDetails/Reviews";
 
 type Props = {};
 
@@ -12,7 +13,8 @@ const ProfessionalDetail = (props: Props) => {
       <Header />
       <Descriptions />
       <FirstVisit />
-      <Gallery/>
+      <Gallery />
+      <Reviews />
     </div>
   );
 };
