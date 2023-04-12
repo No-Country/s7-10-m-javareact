@@ -4,22 +4,28 @@ import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import Logo from "../../assets/logo.png";
-
+import { Navigate } from "react-router-dom";
 import { LoginValues } from "../../models/LoginValues";
 import { loginSchema } from "../../validations/AuthValidations/AuthValidations";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { login, selectToken } from "../../app/state/userSlice";
 
 export default function LogIn() {
+  let dispatch = useAppDispatch();
+  let token = useAppSelector(selectToken);
   const [seePassword, setSeePassword] = useState<boolean>(false);
   const INITIAL__VALUES__LOGIN__FORM: LoginValues = {
     email: "",
     password: ""
   };
+  console.log(token);
+
   return (
     <div className="flex h-screen flex-col items-center justify-center px-4  sm:px-6 lg:px-8">
       <div className="flex flex-col w-full max-w-md justify-center items-center mb-4">
         <p className="w-full text-xs">Login with</p>
       </div>
-
+      {token && <Navigate to="/" />}
       <div className="flex flex-row w-full max-w-md justify-center items-center mb-4 h-10">
         <FcGoogle className="w-2/6 rounded self-center border-solid border-2 border-stone-500 text-base py-1 h-7 cursor-pointer mx-2 h-100 " />
       </div>
@@ -33,7 +39,7 @@ export default function LogIn() {
         <Formik
           initialValues={INITIAL__VALUES__LOGIN__FORM}
           validationSchema={loginSchema}
-          onSubmit={values => console.log(values)}
+          onSubmit={values => dispatch(login(values))}
         >
           {({ errors, touched }) => (
             <Form className="">
