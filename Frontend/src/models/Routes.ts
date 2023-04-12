@@ -5,7 +5,8 @@ export enum PublicRoutes {
   SIGNUPPRO = "signup-pro",
   ONBOARDINGPROVIDER = "onboarding/provider",
   ONBOARDINGCLIENT = "onboarding/client",
-  PROFESSIONALS = "professionals/:id"
+  PROFESSIONALS = "professionals/:id",
+  PROFESSIONALDETAIL = "professional/detail"
 }
 
 export enum PrivateRoutes {
