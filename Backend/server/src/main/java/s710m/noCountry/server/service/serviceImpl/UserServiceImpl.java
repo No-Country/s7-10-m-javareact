@@ -69,6 +69,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         ServiceProvider savedServiceProvider = serviceProviderRepository.save(serviceProvider);
         savedUserServiceProvider.setServiceProvider(savedServiceProvider);
         repository.save(savedUserServiceProvider);
+        serviceCategoryService.addServiceProvider(savedServiceProvider,idCategory);
     }
 
     @Override

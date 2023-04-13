@@ -25,8 +25,7 @@ public class AppConfig {
 
     private final UserRepository repository;
     protected final String[] ALLOWED_ORIGINS = {
-            "http://localhost",
-            "http://localhost:3000"
+            "http://localhost:5173"
     };
     protected final String[] ALLOWED_METHODS = {
             "GET",
