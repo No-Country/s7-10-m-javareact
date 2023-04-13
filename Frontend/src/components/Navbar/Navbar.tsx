@@ -11,7 +11,7 @@ import { logout, selectToken } from "../../app/state/userSlice";
 const navigation: Navigation[] = [
   { name: "Home", href: "/", current: true },
   { name: "Categories", href: "/professionals/", current: false }
-/*   { name: "FAQ", href: "/", current: false },
+  /*   { name: "FAQ", href: "/", current: false },
   { name: "Search", href: "/", current: false } */
 ];
 
@@ -22,7 +22,7 @@ function classNames(...classes: string[]): string {
 }
 
 const Navbar = (props: Props) => {
-  let dispatch = useAppDispatch()
+  let dispatch = useAppDispatch();
   let token = useAppSelector(selectToken);
 
   return (
@@ -52,8 +52,8 @@ const Navbar = (props: Props) => {
                           to={item.href}
                           className={classNames(
                             item.current
-                              ? "rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white"
-                              : "rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-[#004E98] hover:text-white"
+                              ? "rounded-md px-3 py-2 text-sm font-medium bg-[#004E98]/70 text-white"
+                              : "rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-[#004E98] hover:text-white"
                           )}
                           aria-current={item.current ? "page" : undefined}
                         >
@@ -117,7 +117,7 @@ const Navbar = (props: Props) => {
                             {({ active }) => (
                               <a
                                 href="#"
-                                onClick={()=>dispatch(logout())}
+                                onClick={() => dispatch(logout())}
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-700"

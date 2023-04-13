@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 export default function Professionals() {
   return (
     <>
-    <Link to={'/'}>
-    <FaArrowLeft className="text-gray-600 h-6 w-6 ml-4" />
-    </Link>
+      <Link to={"/"}>
+        <FaArrowLeft className="text-gray-600 h-6 w-6 ml-4" />
+      </Link>
       <div className="flex items-center justify-center h-12 w-full p-12">
         <div className="absolute left-10"></div>
         <div>

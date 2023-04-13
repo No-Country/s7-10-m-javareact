@@ -12,10 +12,10 @@ const LogIn = lazy(() => import("../pages/LogIn/LogIn"));
 const SignUpClient = lazy(() => import("../pages/SignUp/SignUpClient"));
 const SignUpPro = lazy(() => import("../pages/SignUp/SignUpPro"));
 const Profile = lazy(() => import("../pages/Profile/Profile"));
-const Provider = lazy(() => import("../components/OnBoarding/Provider"))
-const Client = lazy(() => import("../components/OnBoarding/Client"))
+const Provider = lazy(() => import("../components/OnBoarding/Provider"));
+const Client = lazy(() => import("../components/OnBoarding/Client"));
 const Professionals = lazy(() => import("../pages/Professionals/Professionals"));
-const ProfessionalDetail = lazy(() => import("../pages/ProfessionalDetail/ProfessionalDetail"))
+const ProfessionalDetail = lazy(() => import("../pages/ProfessionalDetail/ProfessionalDetail"));
 
 export default function AppRoute() {
   return (

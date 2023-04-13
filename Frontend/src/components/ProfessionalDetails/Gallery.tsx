@@ -29,7 +29,8 @@ const Gallery = (props: Props) => {
       <div className="max-w-[1400px] h-[400px] md:h-[780px]  w-full m-auto py-16 px-4 relative group">
         <div
           style={{ backgroundImage: `url(${data.gallery[currentIndex].image})` }}
-          className="w-full h-full rounded-2xl bg-center bg-cover duration-500"></div>
+          className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
+        ></div>
         {/* Left Arrow */}
         <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
           <BsChevronCompactLeft onClick={prevSlide} size={30} />
@@ -44,7 +45,8 @@ const Gallery = (props: Props) => {
             <div
               key={slideIndex}
               onClick={() => goToSlide(slideIndex)}
-              className="text-2xl cursor-pointer">
+              className="text-2xl cursor-pointer"
+            >
               <RxDotFilled />
             </div>
           ))}

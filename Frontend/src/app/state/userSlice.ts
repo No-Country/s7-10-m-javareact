@@ -36,7 +36,7 @@ export const userSlice = createSlice({
   name: "user",
   initialState: initialUserState,
   reducers: {
-    logout: (state) => {
+    logout: state => {
       state.token = undefined;
       state.idUser = undefined;
       state.email = undefined;
@@ -44,7 +44,7 @@ export const userSlice = createSlice({
       state.country = undefined;
       state.status = "idle";
       state.error = null;
-    },
+    }
   },
   extraReducers: builder => {
     builder
@@ -62,7 +62,7 @@ export const userSlice = createSlice({
       .addCase(login.rejected, (state, action: PayloadAction<any>) => {
         state.status = "rejected";
         state.error = action.payload.message;
-      })
+      });
   }
 });
 export const { logout } = userSlice.actions;

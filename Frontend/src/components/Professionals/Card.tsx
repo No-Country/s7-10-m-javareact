@@ -7,16 +7,14 @@ import { TbWashMachine, TbFridge, TbAirConditioning } from "react-icons/tb";
 import { BiDrink } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 
-
 export const Card = () => {
   const [expanded, setExpanded] = useState(false);
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   const handleExpandClick = () => {
     console.log("entra");
     setExpanded(!expanded);
   };
   return (
-
     <div
       className={`overflow-hidden transform bg-gray-100 w-[300px] rounded-md m-auto border-solid border-2 border-orange-500 duration-100 ease-out transition hover:animate-none flex flex-col justify-between mt-2 p-1 ${
         expanded ? "h-auto w-[300px]" : "h-20 w-[300px] "
@@ -65,8 +63,11 @@ export const Card = () => {
           <img src="" alt="" />
         </div>
       </div>
-      <div onClick={()=>navigate('/professional/detail/')} className="cursor-pointer max-w-[140px] ml-5" >
-        <div className="" >
+      <div
+        onClick={() => navigate("/professional/detail/")}
+        className="cursor-pointer max-w-[140px] ml-5"
+      >
+        <div className="">
           <p className="border-2 border-solid text-xs px-5 font-normal rounded-[32px] text-center py-2 transition hover:bg-gray-300 border-orange-500 text-orange-500">
             Show more
           </p>
@@ -76,6 +77,5 @@ export const Card = () => {
         <MdOutlineArrowDropUp className="mr-2 -mt-5 text-lg" />
       </button>
     </div>
-
   );
 };
