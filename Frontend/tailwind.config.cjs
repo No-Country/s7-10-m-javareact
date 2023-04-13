@@ -6,7 +6,9 @@ module.exports = {
     fontFamily: {
       sans: ["Montserrat", "sans-serif"],
       georama: ["Georama", "sans-serif"],
-      cagliostro: ["Cagliostro", "sans-serif"]
+      cagliostro: ["Cagliostro", "sans-serif"],
+      inter: ["Inter-Medium", "sans-serif"],
+      inter_regular: ["Inter-Regular", "sans-serif"]
     },
     extend: {
       screens: {

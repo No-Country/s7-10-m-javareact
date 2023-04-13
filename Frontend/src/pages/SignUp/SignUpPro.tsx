@@ -37,7 +37,7 @@ export default function SignUpPro() {
 
   return (
     <div className="flex h-full flex-col items-center justify-center px-4  py-8 sm:px-6 lg:px-8">
-      <div className="flex flex-col w-full max-w-md justify-center items-center mb-4"> 
+      <div className="flex flex-col w-full max-w-md justify-center items-center mb-4">
         <p className="w-full text-xs">Sign up with</p>
       </div>
 

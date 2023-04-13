@@ -13,9 +13,9 @@ const Provider = (props: Props) => {
               className=" min-h-fit opacity-80"
               src="https://img.freepik.com/foto-gratis/hombre-fontanero-fijacion-fregadero-cocina_53876-27.jpg?w=1060&t=st=1680650638~exp=1680651238~hmac=a5fb5b2c0d780b9bfc563073a77b3b3e209a44277e85d8978e1439e8a0807a9d"
             />
-          <p className="text-md text-start absolute top-1 text-[#FF9A1F] font-semibold text-3xl mr-40 ml-4">
-            Are you a skilled trader?
-          </p>
+            <p className="text-md text-start absolute top-1 text-[#FF9A1F] font-semibold text-3xl mr-40 ml-4">
+              Are you a skilled trader?
+            </p>
           </div>
           <div className="justify-start bg-[#FF9A1F]">
             <div className="mx-4 py-4 text-start">
@@ -67,17 +67,25 @@ const Provider = (props: Props) => {
       </div>
       <div className="text-center align-content-center w-full justify-center">
         <div className="py-4 flex justify-center">
-          <Link to='/login' className="text-center bg-[#004E98] hover:bg-gray-700 text-white w-[300px] rounded-full py-3">
+          <Link
+            to="/login"
+            className="text-center bg-[#004E98] hover:bg-gray-700 text-white w-[300px] rounded-full py-3"
+          >
             Login
           </Link>
         </div>
         <div className="py-4 flex justify-center">
-          <Link to='/signup-pro' className="text-center bg-[#004E98] hover:bg-gray-700 text-white w-[300px] rounded-full py-3">
+          <Link
+            to="/signup-pro"
+            className="text-center bg-[#004E98] hover:bg-gray-700 text-white w-[300px] rounded-full py-3"
+          >
             Sign up
           </Link>
         </div>
         <div className="w-full py-5">
-          <Link to='/onboarding/client' className="text-[#5046E5]">I want to hire a skilled trader</Link>
+          <Link to="/onboarding/client" className="text-[#5046E5]">
+            I want to hire a skilled trader
+          </Link>
         </div>
       </div>
     </div>

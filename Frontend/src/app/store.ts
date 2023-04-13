@@ -3,6 +3,7 @@ import authSlice from "./state/authSlice";
 import storage from "redux-persist/lib/storage";
 import { persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import persistCombineReducers from "redux-persist/es/persistCombineReducers";
+import { userSlice } from "./state/userSlice";
 
 const persistConfig = {
   key: "root",
@@ -12,7 +13,8 @@ const persistConfig = {
 };
 
 const persistedReducer = persistCombineReducers(persistConfig, {
-  auth: authSlice
+  auth: authSlice,
+  user: userSlice.reducer
 });
 
 export const store = configureStore({

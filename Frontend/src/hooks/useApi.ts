@@ -7,7 +7,8 @@ export interface apiProps {
   body?: {};
 }
 
-const baseUrl = import.meta.env.VITE_BASE_URL_API || "http://localhost:8080/api";
+const baseUrl =
+  import.meta.env.VITE_BASE_URL_API || "https://nocountry-s7-10m-production.up.railway.app/api";
 
 export const useApi = async <T>({
   path,
@@ -21,8 +22,7 @@ export const useApi = async <T>({
     url: finalUrl,
     headers: {
       "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      Authorization: `Bearer ${token}`
+      "Access-Control-Allow-Origin": "*"
     },
     data: body
   };
