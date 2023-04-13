@@ -11,7 +11,6 @@ export const Card = () => {
   const [expanded, setExpanded] = useState(false);
   let navigate = useNavigate();
   const handleExpandClick = () => {
-    console.log("entra");
     setExpanded(!expanded);
   };
   return (
