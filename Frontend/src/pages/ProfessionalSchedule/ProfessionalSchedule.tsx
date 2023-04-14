@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import Schedule from "../../components/ProfessionalSchedule/Schedule";
 
-type Props = {}
+type Props = {};
 
 const ProfessionalSchedule = (props: Props) => {
   return (
-    <div>ProfessionalSchedule</div>
-  )
-}
+    <div>
+      <div>
+        <Schedule />
+      </div>
+    </div>
+  );
+};
 
-export default ProfessionalSchedule
+export default ProfessionalSchedule;
