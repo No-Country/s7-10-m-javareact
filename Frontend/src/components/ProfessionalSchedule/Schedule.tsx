@@ -15,7 +15,7 @@ const Schedule = (props: Props) => {
             <CalendarPicker />
           </div>
           <div>
-            <span>button</span>
+            <span>Buttons</span>
           </div>
         </div>
       </div>
