@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import es from "date-fns/locale/es";
+import HoursPicker from "./HoursPicker";
 
 const CalendarPicker = () => {
   const [startDate, setStartDate] = useState();
@@ -19,14 +20,16 @@ const CalendarPicker = () => {
         placeholderText="Select time Availability"
         locale={es}
         dateFormat="dd MMMM, yyyy"
+        onChange={onChangeDateHandler}
+        minDate={new Date()}
         startDate={startDate}
         endDate={endDate}
         selected={startDate}
         selectsRange={true}
-        showTimeSelect
+        withPortal
         isClearable
-        onChange={onChangeDateHandler}
       />
+      <HoursPicker />
     </>
   );
 };
