@@ -3,6 +3,7 @@ package s710m.noCountry.server.mapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import s710m.noCountry.server.model.ServiceProvider;
+import s710m.noCountry.server.model.dto.ServiceProviderDetailDto;
 import s710m.noCountry.server.model.dto.ServiceProviderResponseDto;
 
 import java.util.stream.Collectors;
@@ -30,4 +31,21 @@ public class ServiceProviderMapper {
         return dto;
     }
 
+    public ServiceProviderDetailDto toDetailsDto(ServiceProvider serviceProvider){
+        ServiceProviderDetailDto dto = new ServiceProviderDetailDto();
+        dto.setIdUser(serviceProvider.getUser().getId());
+        dto.setEmail(serviceProvider.getUser().getUsername());
+        dto.setFullName(serviceProvider.getFullName());
+        dto.setCountry(serviceProvider.getCountry());
+        dto.setExperienceYears(serviceProvider.getExperienceYears());
+        dto.setProfileDescription(serviceProvider.getProfileDescription());
+        dto.setScore(serviceProvider.getScore());
+        dto.setCategories(serviceProvider.getServiceCategories()
+                .stream()
+                .map(mapper::toDto)
+                .collect(Collectors.toList()));
+        dto.setProfilePhoto(serviceProvider.getProfilePhoto());
+        dto.setGalleryPhotos(serviceProvider.getGalleryPhotos());
+        return dto;
+    }
 }

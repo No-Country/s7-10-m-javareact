@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import s710m.noCountry.server.model.Appointment;
 import s710m.noCountry.server.model.dto.AppointmentRequestDto;
 import s710m.noCountry.server.model.dto.AppointmentResponseDto;
+import s710m.noCountry.server.model.dto.AppointmentUpdateDto;
 import s710m.noCountry.server.service.AppointmentService;
 
 import javax.persistence.EntityNotFoundException;
@@ -21,36 +22,36 @@ public class AppointmentController {
 
     private final AppointmentService service;
 
-    ////End point para obtener todos los turnos GET= "/turnos/"
+    ////End point para obtener todos los turnos GET= "/api/appointment"
     @GetMapping
-    public ResponseEntity<List<Appointment>> getAll() {
-        List<Appointment>listAppointment= service.getAllAppointments();
+    public ResponseEntity<List<AppointmentResponseDto>> getAll() {
+        List<AppointmentResponseDto> listAppointment= service.getAllAppointments();
         return new ResponseEntity<>(listAppointment, HttpStatus.OK);
     }
 
-    ////End point para actualizar todos los turnos PUT= "/turnos/"
+    ////End point para actualizar todos los turnos PUT= "/api/appointment"
     @PutMapping("/{id}")
-    public ResponseEntity<Appointment> update(@PathVariable Long id, @RequestBody Appointment appointment) {
-        Appointment updatedAppointment = service.updateAppointment(id,appointment);
+    public ResponseEntity<AppointmentResponseDto> update(@PathVariable Long id, @RequestBody AppointmentUpdateDto appointment) {
+        AppointmentResponseDto updatedAppointment = service.updateAppointment(id,appointment);
         return new ResponseEntity<>(updatedAppointment, HttpStatus.OK);
     }
 
 
-    ////End point para guardar  turnos POST= "/turnos/"
+    ////End point para guardar  turnos POST= "/api/appointment"
     @PostMapping
     public ResponseEntity<AppointmentResponseDto> save(@RequestBody AppointmentRequestDto dto) throws Exception {
         AppointmentResponseDto createdAppointment= service.saveAppointment(dto);
         return new ResponseEntity<>(createdAppointment, HttpStatus.CREATED);
     }
 
-    ////End point para eliminar por id todos los turnos DELETE= "/turnos/3"
+    ////End point para eliminar por id todos los turnos DELETE= "/api/appointment/3"
     @DeleteMapping("/{appointmentId}")
     public void delete(@PathVariable("appointmentId") Long appointmentId) {
         service.deleteAppointment(appointmentId);
     }
 
 
-    ////End point para obtener  POR ID todos los turnos GET= "/turnos/3"
+    ////End point para obtener  POR ID todos los turnos GET= "/api/appointment/3"
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Appointment>> searchById(@PathVariable Long id) throws EntityNotFoundException {
         Optional<Appointment> appointment= service.searchById(id);

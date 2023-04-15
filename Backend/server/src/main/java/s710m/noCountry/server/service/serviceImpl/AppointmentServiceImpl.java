@@ -9,12 +9,14 @@ import s710m.noCountry.server.mapper.AppointmentMapper;
 import s710m.noCountry.server.model.Appointment;
 import s710m.noCountry.server.model.dto.AppointmentRequestDto;
 import s710m.noCountry.server.model.dto.AppointmentResponseDto;
+import s710m.noCountry.server.model.dto.AppointmentUpdateDto;
 import s710m.noCountry.server.repository.AppointmentRepository;
 import s710m.noCountry.server.service.AppointmentService;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -45,15 +47,17 @@ public class AppointmentServiceImpl implements AppointmentService {
     }
 
     @Override
-    public List<Appointment> getAllAppointments() {
-        return repository.findAll();
+    public List<AppointmentResponseDto> getAllAppointments() {
+        return repository.findAll()
+                .stream()
+                .map(mapper::toDto)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public Appointment updateAppointment(Long id, Appointment appointment) {
-        searchById(id).get();
-        Appointment appointment1= repository.save(appointment);
-        return appointment1;
+    public AppointmentResponseDto updateAppointment(Long id, AppointmentUpdateDto dto) {
+        Appointment appointment = repository.save(mapper.toUpdatedEntity(dto,searchById(id).get()));
+        return mapper.toDto(appointment);
     }
 
     @Override
