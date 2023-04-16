@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import s710m.noCountry.server.configException.EntityNotFoundException;
 import s710m.noCountry.server.mapper.ServiceProviderMapper;
 import s710m.noCountry.server.model.ServiceProvider;
-import s710m.noCountry.server.model.dto.ServiceProviderDetailDto;
 import s710m.noCountry.server.repository.ServiceProviderRepository;
 import s710m.noCountry.server.service.ReviewService;
 import s710m.noCountry.server.service.ServiceProviderService;
@@ -25,13 +24,6 @@ public class ServiceProviderServiceImpl implements ServiceProviderService {
         return repository.findById(id).orElseThrow( () ->
                 new EntityNotFoundException("Service Provider not found.")
         );
-    }
-
-    @Override
-    public ServiceProviderDetailDto getDetails(Long id) {
-        ServiceProviderDetailDto dto = mapper.toDetailsDto(getById(id));
-        dto.setReviews(reviewService.getAllReviewsByServiceProvider(id));
-        return dto;
     }
 
     @Override
