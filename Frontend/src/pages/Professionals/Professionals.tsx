@@ -51,8 +51,7 @@ export default function Professionals() {
       </div>
       
       {selectStatus === "fulfilled" &&
-        select.map(provider => <Card key={provider.id} provider={provider} />)}{" "}
-      :
+        select.map((provider,index) => <Card key={index}  provider={provider} />)}
     </>
   );
 }

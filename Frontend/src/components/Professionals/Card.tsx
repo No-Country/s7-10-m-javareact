@@ -7,7 +7,7 @@ import { TbWashMachine, TbFridge, TbAirConditioning } from "react-icons/tb";
 import { BiDrink } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
-export const Card = ({ provider, key }: any) => {
+export const Card = ({ provider }: any) => {
   const [expanded, setExpanded] = useState(false);
   const {
     categories,
@@ -24,8 +24,7 @@ export const Card = ({ provider, key }: any) => {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  console.log(provider);
-  /*  console.log(categories,country,email,experienceYears,fullName,idUser,profileDescription,profilePhoto,score) */
+
   return (
     <div
       className={`overflow-hidden transform bg-gray-100 w-[300px] rounded-md m-auto border-solid border-2 border-orange-500 duration-100 ease-out transition hover:animate-none flex flex-col justify-between mt-2 p-1 ${

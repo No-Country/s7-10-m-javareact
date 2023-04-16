@@ -27,7 +27,6 @@ interface Category {
 export const getProviders = createAsyncThunk(
   "service-categories/",
   async ({ id }: { id: string }) => {
-    console.log(id);
     const apiProps: apiProps = {
       path: `service-categories/${id}`,
       method: "get"
