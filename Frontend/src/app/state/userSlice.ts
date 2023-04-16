@@ -17,7 +17,7 @@ export const initialUserState: UserState = {
 };
 
 export const login = createAsyncThunk(
-  "/auth/login",
+  "auth/login",
   async ({ email, password }: { email: string; password: string }) => {
     const apiProps: apiProps = {
       path: "auth/login",

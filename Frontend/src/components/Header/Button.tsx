@@ -8,7 +8,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ onClick, children }) => {
   return (
     <button
-      className="w-1/8 absolute inset-y-0 right-0 flex items-center sm:hidden pr-2 text-[#FFF]"
+      className="w-1/8 absolute inset-y-0 right-0 flex items-center pr-2 text-[#FFF]"
       onClick={onClick}
     >
       {children}

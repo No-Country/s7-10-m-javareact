@@ -3,6 +3,7 @@ import Button from "./Button";
 import Modal from "./Modal";
 import User from "../../assets/icon-user.png";
 import { Link } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 
 const ButtonWithModal: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,7 @@ const ButtonWithModal: React.FC = () => {
   return (
     <>
       <Button onClick={handleOpenModal}>
-        <img src={User} alt="Botón con modal" />
+        <FaUserCircle className="text-[#004E98] w-11 h-11 -mr-1" />
       </Button>
       {isOpen && (
         <Modal isOpen={isOpen} onClose={handleCloseModal}>
