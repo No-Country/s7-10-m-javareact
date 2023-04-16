@@ -21,11 +21,6 @@ public class ServiceProviderController {
 
     private final ServiceProviderService service;
 
-    @GetMapping("/details/{id}")
-    public ResponseEntity<ServiceProviderDetailDto> getDetailsById(@PathVariable Long id){
-        return ResponseEntity.status(OK).body(service.getDetails(id));
-    }
-
     @GetMapping()
     public ResponseEntity<List<ServiceProvider>> getAllServiceProviders(){
         return ResponseEntity.status(OK).body(service.getAllServiceProviders());
