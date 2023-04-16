@@ -1,9 +1,33 @@
 import { FaArrowLeft } from "react-icons/fa";
-import Calefaccion from "../../assets/jobs/calefaccion.png";
 import { Card } from "../../components/Professionals/Card";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import {
+  SelectProviders,
+  SelectStatusProviders,
+  getProviders
+} from "../../app/state/providerSlice";
+import { useEffect, useRef } from "react";
+import { useImageStackById } from "../../hooks/useImageStack";
+import { HeaderCard } from "../../components/Professionals/HeaderCard";
+
 
 export default function Professionals() {
+  let dispatch = useAppDispatch();
+  let { id } = useParams();
+  let selectStatus = useAppSelector(SelectStatusProviders);
+  let select = useAppSelector(SelectProviders);
+
+  const profession = useImageStackById(parseInt(id ?? ""));
+  const effectRan = useRef(false);
+  useEffect(() => {
+    if (effectRan.current === false) {
+      dispatch(getProviders({ id: id! }));
+
+      effectRan.current = true;
+    }
+  }, [dispatch, id]);
+
   return (
     <>
       <Link to={"/"}>
@@ -11,12 +35,7 @@ export default function Professionals() {
       </Link>
       <div className="flex items-center justify-center h-12 w-full p-12">
         <div className="absolute left-10"></div>
-        <div>
-          <div className="bg-gray-100 w-20 h-20 xs:w-20xs:h-20 sm:h-20 rounded-md m-auto  border-solid border-2 border-orange-500 duration-100 ease-out transition hover:animate-none flex justify-center mt-4">
-            <img src={Calefaccion} className="w-12 xs:w-16 xs:h-18 self-center" />
-          </div>
-          <p className="text-center pt-0 mt-1 font-cagliostro">Plumber</p>
-        </div>
+        <HeaderCard profession={profession} />
       </div>
       <div className="flex justify-center p-6 max-w-[280px] m-auto">
         <input
@@ -30,10 +49,10 @@ export default function Professionals() {
           placeholder="Filter By"
         />
       </div>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      
+      {selectStatus === "fulfilled" &&
+        select.map(provider => <Card key={provider.id} provider={provider} />)}{" "}
+      :
     </>
   );
 }

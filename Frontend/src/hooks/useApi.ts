@@ -16,6 +16,7 @@ export const useApi = async <T>({
   method,
   token
 }: apiProps): Promise<AxiosResponse<T>> => {
+  console.log(body);
   const finalUrl = `${baseUrl}/${path}`;
   const options: AxiosRequestConfig = {
     method: method,
