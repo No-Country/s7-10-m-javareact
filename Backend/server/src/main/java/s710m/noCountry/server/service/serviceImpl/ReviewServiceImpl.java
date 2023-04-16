@@ -43,6 +43,7 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
+    @Transactional
     public void reviewDataLoad(ReviewRequestDto dto) {
         Review review = repository.save(mapper.toEntity(dto));
         addRatingProm(review.getServiceProvider());
