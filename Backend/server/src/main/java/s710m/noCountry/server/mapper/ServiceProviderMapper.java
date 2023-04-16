@@ -29,5 +29,4 @@ public class ServiceProviderMapper {
         dto.setProfilePhoto(serviceProvider.getProfilePhoto());
         return dto;
     }
-
 }
