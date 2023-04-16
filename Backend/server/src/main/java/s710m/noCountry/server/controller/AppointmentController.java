@@ -4,8 +4,10 @@ package s710m.noCountry.server.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import s710m.noCountry.server.model.Appointment;
+import s710m.noCountry.server.model.User;
 import s710m.noCountry.server.model.dto.AppointmentRequestDto;
 import s710m.noCountry.server.model.dto.AppointmentResponseDto;
 import s710m.noCountry.server.model.dto.AppointmentUpdateDto;
@@ -31,23 +33,23 @@ public class AppointmentController {
 
     ////End point para actualizar todos los turnos PUT= "/api/appointment"
     @PutMapping("/{id}")
-    public ResponseEntity<AppointmentResponseDto> update(@PathVariable Long id, @RequestBody AppointmentUpdateDto appointment) {
-        AppointmentResponseDto updatedAppointment = service.updateAppointment(id,appointment);
+    public ResponseEntity<AppointmentResponseDto> update(@PathVariable Long id, @RequestBody AppointmentUpdateDto appointment, @AuthenticationPrincipal User user) {
+        AppointmentResponseDto updatedAppointment = service.updateAppointment(id,appointment,user);
         return new ResponseEntity<>(updatedAppointment, HttpStatus.OK);
     }
 
 
     ////End point para guardar  turnos POST= "/api/appointment"
     @PostMapping
-    public ResponseEntity<AppointmentResponseDto> save(@RequestBody AppointmentRequestDto dto) throws Exception {
-        AppointmentResponseDto createdAppointment= service.saveAppointment(dto);
+    public ResponseEntity<AppointmentResponseDto> save(@RequestBody AppointmentRequestDto dto, @AuthenticationPrincipal User user) throws Exception {
+        AppointmentResponseDto createdAppointment= service.saveAppointment(dto, user);
         return new ResponseEntity<>(createdAppointment, HttpStatus.CREATED);
     }
 
     ////End point para eliminar por id todos los turnos DELETE= "/api/appointment/3"
     @DeleteMapping("/{appointmentId}")
-    public void delete(@PathVariable("appointmentId") Long appointmentId) {
-        service.deleteAppointment(appointmentId);
+    public void delete(@PathVariable("appointmentId") Long appointmentId, @AuthenticationPrincipal User user) {
+        service.deleteAppointment(appointmentId, user);
     }
 
 
