@@ -20,7 +20,7 @@ export const initialUserState: ProviderState = {
   providers: []
 };
 
-interface Category {
+export interface Category {
   id: number;
   name: string;
 }

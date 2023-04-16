@@ -11,7 +11,6 @@ import { useEffect, useRef } from "react";
 import { useImageStackById } from "../../hooks/useImageStack";
 import { HeaderCard } from "../../components/Professionals/HeaderCard";
 
-
 export default function Professionals() {
   let dispatch = useAppDispatch();
   let { id } = useParams();
@@ -27,7 +26,7 @@ export default function Professionals() {
       effectRan.current = true;
     }
   }, [dispatch, id]);
-
+console.log(select)
   return (
     <>
       <Link to={"/"}>
@@ -49,9 +48,9 @@ export default function Professionals() {
           placeholder="Filter By"
         />
       </div>
-      
+
       {selectStatus === "fulfilled" &&
-        select.map((provider,index) => <Card key={index}  provider={provider} />)}
+        select.map((provider, index) => <Card key={index} provider={provider} />)}
     </>
   );
 }

@@ -23,7 +23,7 @@ const ButtonWithModal: React.FC = () => {
   return (
     <>
       <Button onClick={handleOpenModal}>
-        <FaUserCircle className="text-[#004E98] w-11 h-11 -mr-1"/>
+        <FaUserCircle className="text-[#004E98] w-11 h-11 -mr-1" />
       </Button>
       {isOpen && (
         <Modal isOpen={isOpen} onClose={handleCloseModal}>

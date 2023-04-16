@@ -10,7 +10,7 @@ const Provider = (props: Props) => {
         <div className="text-start ">
           <div className="relative">
             <img
-              className=" min-h-fit opacity-80"
+              className=" min-h-fit opacity-80 m-auto"
               src="https://img.freepik.com/foto-gratis/hombre-fontanero-fijacion-fregadero-cocina_53876-27.jpg?w=1060&t=st=1680650638~exp=1680651238~hmac=a5fb5b2c0d780b9bfc563073a77b3b3e209a44277e85d8978e1439e8a0807a9d"
             />
             <p className="text-md text-start absolute top-1 text-[#FF9A1F] font-semibold text-3xl mr-40 ml-4">

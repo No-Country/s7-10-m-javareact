@@ -6,6 +6,10 @@ import Profile from "../../assets/profile.png";
 import { TbWashMachine, TbFridge, TbAirConditioning } from "react-icons/tb";
 import { BiDrink } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { useImageStackWithIcon } from '../../hooks/useImageStack';
+import { Category } from "../../app/state/providerSlice";
+import { IconWrapper } from "./IconWrapper";
+import { IconType } from "react-icons";
 
 export const Card = ({ provider }: any) => {
   const [expanded, setExpanded] = useState(false);
@@ -21,10 +25,10 @@ export const Card = ({ provider }: any) => {
     score
   } = provider;
   let navigate = useNavigate();
+  let professions = useImageStackWithIcon()
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   return (
     <div
       className={`overflow-hidden transform bg-gray-100 w-[300px] rounded-md m-auto border-solid border-2 border-orange-500 duration-100 ease-out transition hover:animate-none flex flex-col justify-between mt-2 p-1 ${
@@ -65,11 +69,20 @@ export const Card = ({ provider }: any) => {
           <p className="font-inter text-md mr-1">Other trades: </p> Home appliance technician
         </span>
         <div className="flex justify-around text-3xl p-4	">
-          <TbWashMachine />
+        {categories.map((category: Category) => {
+          const profession = professions.find((p) => p.id === category.id);
+          const icon = profession?.icon;
+          console.log(profession?.icon)
+          if(icon){
+            return <IconWrapper key={profession?.id} icon={icon} />
+          }
+          ;
+        })}
+  {/*         <TbWashMachine />
           <TbFridge />
           <BiDrink />
           <TbAirConditioning />
-          <img src="" alt="" />
+          <img src="" alt="" /> */}
         </div>
       </div>
       <div
