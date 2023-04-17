@@ -16,19 +16,22 @@ const CalendarPicker = () => {
 
   return (
     <>
-      <DatePicker
-        placeholderText="Select time Availability"
-        locale={es}
-        dateFormat="dd MMMM, yyyy"
-        onChange={onChangeDateHandler}
-        minDate={new Date()}
-        startDate={startDate}
-        endDate={endDate}
-        selected={startDate}
-        selectsRange={true}
-        withPortal
-        isClearable
-      />
+      <div className="py-4">
+        <DatePicker
+          className="border rounded-md border-gray-500 px-4 py-1"
+          placeholderText="Select time Availability"
+          locale={es}
+          dateFormat="dd MMMM, yyyy"
+          onChange={onChangeDateHandler}
+          minDate={new Date()}
+          startDate={startDate}
+          endDate={endDate}
+          selected={startDate}
+          selectsRange={true}
+          withPortal
+          isClearable
+        />
+      </div>
       <HoursPicker />
     </>
   );

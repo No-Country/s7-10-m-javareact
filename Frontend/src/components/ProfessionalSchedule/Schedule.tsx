@@ -8,14 +8,14 @@ const Schedule = (props: Props) => {
     <div>
       <div className="flex justify-center min-h-screen">
         <div className="py-4">
-          <div className="py-4">
+          <div className="py-4 text-2xl flex justify-center">
             <h2>Availability</h2>
           </div>
-          <div>
+          <div className="py-8">
             <CalendarPicker />
           </div>
-          <div>
-            <span>button</span>
+          <div className="py-2 flex justify-center bg-[#5046E5] text-white rounded-md">
+            <span>Save</span>
           </div>
         </div>
       </div>
