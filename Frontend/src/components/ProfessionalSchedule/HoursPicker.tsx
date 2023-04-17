@@ -7,16 +7,19 @@ type Props = {};
 const HoursPicker = (props: Props) => {
   const [startDate, setStartDate] = useState(new Date());
   return (
-    <ReactDatePicker
-      selected={startDate}
-      onChange={(date: any) => setStartDate(date)}
-      showTimeSelect
-      showTimeSelectOnly
-      timeIntervals={30}
-      timeCaption="Time"
-      dateFormat="h:mm aa"
-      withPortal
-    />
+    <div>
+      <ReactDatePicker
+        className="border rounded-md border-gray-500 px-4 py-1"
+        selected={startDate}
+        onChange={(date: any) => setStartDate(date)}
+        showTimeSelect
+        showTimeSelectOnly
+        timeIntervals={30}
+        timeCaption="Time"
+        dateFormat="h:mm aa"
+        withPortal
+      />
+    </div>
   );
 };
 
