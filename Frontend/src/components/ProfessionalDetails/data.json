@@ -1,0 +1,66 @@
+{
+  "name": "Jack",
+  "picture": "https://cdn-boadd.nitrocdn.com/dFVpCkCQuyKKGCvsieWgIJjyQLauwWHh/assets/images/optimized/rev-40463ed/wp-content/uploads/2015/11/VIGILANT-plumber-fixing-a-sink-shutterstock_132523334-e1448389230378-620x400.jpg",
+  "serviceCategories": [
+    {
+      "role": "Plumber",
+      "order": "1"
+    },
+    {
+      "role": "tag",
+      "order": "2"
+    },
+    {
+      "role": "tag",
+      "order": "3"
+    },
+    {
+      "role": "tag",
+      "order": "4"
+    }
+  ],
+  "stars": "4.6",
+  "experience": "12 years",
+  "state": "Buenos Aires",
+  "country": "Argentina",
+  "description": {
+    "text": "Hello, my name is Jack and I've been a plumber for over 10 years. I started my career as an apprentice, learning the ropes from experienced plumbers and gradually building up my skills and knowledge."
+  },
+  "firstVisit": [
+    "Inspect plumbing fixtures and appliances",
+    "Water pressure test",
+    "Pipes and drain check",
+    "Inspect exposed pipes and joints for signs of leaks or damage."
+  ],
+  "gallery": [
+    {
+      "image": "https://plus.unsplash.com/premium_photo-1663047166207-fd717b9a0ba7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      "image": "https://plus.unsplash.com/premium_photo-1663013675008-bd5a7898ac4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      "image": "https://plus.unsplash.com/premium_photo-1661342406124-740ae7a0dd0e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+    },
+    {
+      "image": "https://plus.unsplash.com/premium_photo-1663013668741-5d280c6b801b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      "image": "https://plus.unsplash.com/premium_photo-1664301132849-f52af765df79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "Juan",
+      "date": "08/05/22",
+      "text": "I would highly recommend this plumbing service to anyone in need of plumbing repairs. Jack and his team are skilled, reliable, and provide excellent customer service. I will definitely be using them again in the future.",
+      "stars": 4.8
+    },
+    {
+      "reviewer": "Antonella",
+      "date": "28/07/22",
+      "text": "He was polite, professional, and took the time to listen to my concerns and explain what needed to be done. He was able to quickly diagnose the problem and provide me with a quote, which was very reasonable.",
+      "stars": 4.5
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Cagliostro";
+  src: url("../src/assets/fonts/Cagliostro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Georama";
+  src: url("../src/assets/fonts/Georama-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("../src/assets/fonts/Inter-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Inter-Medium";
+  src: url("../src/assets/fonts/Inter-Medium.ttf");
+}
+/*  *{
+  box-sizing: border-box;
+ outline:3px solid limegreen !important; 
+}   */
