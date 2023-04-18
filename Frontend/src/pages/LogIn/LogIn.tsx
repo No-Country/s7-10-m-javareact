@@ -21,9 +21,9 @@ export default function LogIn() {
   
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center px-4  sm:px-6 lg:px-8">
+    <div className="flex flex-col items-center justify-center px-4 mt-8 sm:px-6 lg:px-8 font-inter_regular">
       <div className="flex flex-col w-full max-w-md justify-center items-center mb-4">
-        <p className="w-full text-xs">Login with</p>
+        <p className="w-full text-sm ">Login with</p>
       </div>
       {token && <Navigate to="/" />}
       <div className="flex flex-row w-full max-w-md justify-center items-center mb-4 h-10">
@@ -75,18 +75,18 @@ export default function LogIn() {
               ) : null}
 
               <button
-                className="group relative flex w-full justify-center rounded-3xl bg-[#004E98] px-3 py-3 text-sm font-semibold text-white hover:bg-[#004E98]/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  mt-8"
+                className="group relative flex w-full justify-center font-georama rounded-3xl bg-[#004E98] px-3 py-3 text-sm font-semibold text-white hover:bg-[#004E98]/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  mt-8"
                 type="submit"
               >
                 Log In
               </button>
-              <button className="text-center w-full	mt-4 text-[#004E98]" type="button">
+              <button className="text-center w-full	mt-4 text-[#004E98] font-inter font-semibold" type="button">
                 Forgot your password?
               </button>
 
               <div className="w-100 flex items-center justify-center">
                 <Link to="/signup-client" className="w-full mt-4 self-center text-center	">
-                  Don't have an account yet? <span className="text-[#004E98]">Sign up!</span>
+                  Don't have an account yet? <span className="text-[#004E98] font-inter font-semibold">Sign up!</span>
                 </Link>
               </div>
             </Form>

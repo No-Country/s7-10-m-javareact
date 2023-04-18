@@ -15,7 +15,7 @@ export default function Home() {
           ready to help you get your home back in shape
         </h1>
         <Table />
-        <StartNow />
+        <StartNow  />
       </div>
     </>
   );

@@ -41,7 +41,7 @@ export const Table = () => {
       {showAllImages && (
         <div className="m-auto cursor-pointer max-w-lg" onClick={handleHideAllImages}>
           <div className="justify-center align-content-center px-4 py-6">
-            <p className="border-2 border-solid text-2xl font-normal rounded-[32px] text-center py-2 transition hover:bg-gray-300 border-[#004E98] text-[#004E98]">
+            <p className="border-2 border-solid text-2xl font-semibold font-georama rounded-[32px] text-center py-2 transition hover:bg-gray-300 border-[#004E98] text-[#004E98]">
               Hide
             </p>
           </div>

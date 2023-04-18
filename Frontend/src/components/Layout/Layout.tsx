@@ -11,9 +11,18 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
-      <Navbar />
-      {children}
-      <Footer />
+    <div className="flex flex-col min-h-screen">
+    <Navbar />
+  <main className="flex-grow">
+  {children}
+  </main>
+  
+  <Footer />
+  
+  </div>
+      
+      
+      
     </>
   );
 }

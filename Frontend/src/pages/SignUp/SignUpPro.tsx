@@ -36,9 +36,9 @@ export default function SignUpPro() {
   };
 
   return (
-    <div className="flex h-full flex-col items-center justify-center px-4  py-8 sm:px-6 lg:px-8">
+    <div className="flex h-full flex-col items-center font-inter-regular justify-center px-4  py-8 sm:px-6 lg:px-8">
       <div className="flex flex-col w-full max-w-md justify-center items-center mb-4">
-        <p className="w-full text-xs">Sign up with</p>
+        <p className="w-full text-sm">Sign up with</p>
       </div>
 
       <div className="flex flex-row w-full max-w-md justify-center items-center mb-4 h-10">
@@ -155,8 +155,8 @@ export default function SignUpPro() {
               </button>
 
               <div className="w-100 flex items-center justify-center">
-                <Link to="/login" className="w-full mt-4 self-center text-center	">
-                  Already have an account? <span className="text-[#004E98]">Log in!</span>
+                <Link to="/login" className="w-full mt-4 self-center text-center font-inter-regular">
+                  Already have an account? <span className="text-[#004E98] font-semibold">Log in!</span>
                 </Link>
               </div>
             </Form>
