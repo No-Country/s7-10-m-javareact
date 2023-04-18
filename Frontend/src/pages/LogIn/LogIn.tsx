@@ -21,9 +21,6 @@ export default function LogIn() {
   };
   const handleLogin = (values: any) => {
     dispatch(login(values));
-    toast.success("Lorem ipsum dolor", {
-      theme: "colored"
-    });
   };
 
   return (
