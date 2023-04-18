@@ -1,21 +1,25 @@
 import React from "react";
 import Scheduler from "../../components/DateScheduler/Scheduler";
 import AditionalInfo from "../../components/DateScheduler/AditionalInfo";
+import Header from "../../components/ProfessionalDetails/Header";
 
 type Props = {};
 
 const DateSchedule = (props: Props) => {
   return (
-    <div className="flex justify-center">
-      <div>
+    <>
+      <Header />
+      <div className="flex justify-center">
         <div>
-          <Scheduler />
-        </div>
-        <div>
-          <AditionalInfo />
+          <div>
+            <Scheduler />
+          </div>
+          <div>
+            <AditionalInfo />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
