@@ -8,7 +8,7 @@ interface Schedule {
 }
 
 const timeOptions = [
-  "12:00 AM",
+  "00:00 AM",
   "01:00 AM",
   "02:00 AM",
   "03:00 AM",
@@ -31,7 +31,8 @@ const timeOptions = [
   "08:00 PM",
   "09:00 PM",
   "10:00 PM",
-  "11:00 PM"
+  "11:00 PM",
+  "12:00 HS"
 ];
 
 const Scheduler = () => {
