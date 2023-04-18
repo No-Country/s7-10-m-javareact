@@ -8,7 +8,8 @@ module.exports = {
       georama: ["Georama", "sans-serif"],
       cagliostro: ["Cagliostro", "sans-serif"],
       inter: ["Inter-Medium", "sans-serif"],
-      inter_regular: ["Inter-Regular", "sans-serif"]
+      inter_regular: ["Inter-Regular", "sans-serif"],
+      inter_italic: ["Inter-Italic", "sans-serif"]
     },
     extend: {
       screens: {

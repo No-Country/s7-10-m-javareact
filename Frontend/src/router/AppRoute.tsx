@@ -5,7 +5,7 @@ import Layout from "../components/Layout/Layout";
 import AuthGuard from "./guards/AuthGuard";
 import { ToastContainer } from "react-toastify";
 
-const Spinner = lazy(() => import("../components/Spinner/Spinner"));
+const Spinner = lazy(() => import("../components/Spinner/SpinnerMain"));
 const Home = lazy(() => import("../pages/Home/Home"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
 const LogIn = lazy(() => import("../pages/LogIn/LogIn"));
