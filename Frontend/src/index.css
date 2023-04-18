@@ -14,7 +14,7 @@ Scrollbar
 
 /* Estilo del thumb (la barra que se mueve) */
 ::-webkit-scrollbar-thumb {
-  background-color: #FF9A1F; /* Color del thumb */
+  background-color: #ff9a1f; /* Color del thumb */
 }
 
 /* Estilo del thumb al pasar el mouse */
@@ -45,6 +45,11 @@ Scrollbar
 @font-face {
   font-family: "Inter-Medium";
   src: url("../src/assets/fonts/Inter-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Inter-Italic";
+  src: url("../src/assets/fonts/Inter-Italic.ttf");
 }
 /*  *{
   box-sizing: border-box;

@@ -13,8 +13,8 @@ const FirstVisit = (props: Props) => {
   return (
     <div>
       <div className="text-start mx-8 py-4">
-        <h2 className="text-2xl font-semibold">First Visit Includes:</h2>
-        <ol className="py-2 mx-4">{listItems}</ol>
+        <h2 className="text-2xl font-semibold font-georama">First Visit Includes:</h2>
+        <ol className="py-2 mx-4 font-inter_italic">{listItems}</ol>
       </div>
     </div>
   );

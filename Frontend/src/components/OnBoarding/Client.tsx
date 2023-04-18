@@ -19,7 +19,9 @@ const Client = (props: Props) => {
           </div>
           <div className="justify-start bg-[#FF9A1F]">
             <div className="mx-4 py-4 text-start">
-              <p className="text-2xl py-2 font-semibold text-[#14213D] font-georama">Find a service provider</p>
+              <p className="text-2xl py-2 font-semibold text-[#14213D] font-georama">
+                Find a service provider
+              </p>
               <p className="text-xl font-inter">
                 Welcome to our platform for finding professionals to help repair damage in your
                 home! We understand that experiencing damage to your home can be a stressful and

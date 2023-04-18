@@ -26,7 +26,7 @@ const ProfessionalDetail = (props: Props) => {
   }, [dispatch, id]);
   return (
     <div>
-      {status === 'fulfilled' ? (
+      {status === "fulfilled" ? (
         <>
           <Header />
           <Descriptions />

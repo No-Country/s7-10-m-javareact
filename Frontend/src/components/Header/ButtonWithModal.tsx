@@ -27,7 +27,7 @@ const ButtonWithModal: React.FC = () => {
       </Button>
       {isOpen && (
         <Modal isOpen={isOpen} onClose={handleCloseModal}>
-          <div className="flex h-full flex-col items-center justify-center px-4  sm:px-6 lg:px-8 ">
+          <div className="flex h-full flex-col items-center justify-center px-4 font-inter  sm:px-6 lg:px-8 ">
             <h1 className="font-semibold text-xl mb-3 text-[#004E98]">Welcome!</h1>
             <p className="text-sm mb-3">Would you like to...</p>
             <Link

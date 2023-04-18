@@ -32,7 +32,7 @@ export const Footer = () => {
         </div>
         <hr />
         <div className="justify-center pt-8 px-4">
-          <p className="text-center text-sm text-white ">
+          <p className="text-center text-sm text-white font-georama font-normal ">
             2023 HomeHero. All rights reserved Privacy & Terms
           </p>
         </div>

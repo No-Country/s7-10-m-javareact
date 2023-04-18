@@ -119,7 +119,10 @@ export default function SignUpPro() {
               </div>
 
               <div className="mt-5 ">
-                <label htmlFor="categories" className="w-full flex text-center justify-center	">
+                <label
+                  htmlFor="categories"
+                  className="w-full flex text-center justify-center	font-inter font-semibold"
+                >
                   Which services would you like to offer?
                 </label>
                 <Categories addCategory={addCategory} categories={categories} />
@@ -155,8 +158,12 @@ export default function SignUpPro() {
               </button>
 
               <div className="w-100 flex items-center justify-center">
-                <Link to="/login" className="w-full mt-4 self-center text-center font-inter-regular">
-                  Already have an account? <span className="text-[#004E98] font-semibold">Log in!</span>
+                <Link
+                  to="/login"
+                  className="w-full mt-4 self-center text-center font-inter-regular"
+                >
+                  Already have an account?{" "}
+                  <span className="text-[#004E98] font-semibold">Log in!</span>
                 </Link>
               </div>
             </Form>

@@ -23,18 +23,18 @@ function classNames(...classes: string[]): string {
 
 const Navbar = (props: Props) => {
   const [currentNavItem, setCurrentNavItem] = useState(navigation[0]);
-  const handleNavItemChange = (item:SetStateAction<Navigation>) => {
+  const handleNavItemChange = (item: SetStateAction<Navigation>) => {
     setCurrentNavItem(item);
-    navigation.forEach((navItem) => {
+    navigation.forEach(navItem => {
       navItem.current = navItem === item;
     });
   };
   let dispatch = useAppDispatch();
   let token = useAppSelector(selectToken);
- 
+
   return (
     <div>
-      <Disclosure as="nav" className="bg-white">
+      <Disclosure as="nav" className="bg-white font-inter">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -57,7 +57,7 @@ const Navbar = (props: Props) => {
                         <Link
                           key={item.name}
                           to={item.href}
-                          onClick={()=>handleNavItemChange(item)}
+                          onClick={() => handleNavItemChange(item)}
                           className={classNames(
                             item.current
                               ? "rounded-md px-3 py-2 text-sm font-medium bg-[#004E98]/70 text-white"

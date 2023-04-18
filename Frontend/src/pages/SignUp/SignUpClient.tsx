@@ -102,7 +102,8 @@ export default function SignUpClient() {
 
               <div className="w-100 flex items-center justify-center">
                 <Link to="/login" className="w-full mt-4 self-center text-center	">
-                  Already have an account? <span className="text-[#004E98] font-inter font-semibold">Log in!</span>
+                  Already have an account?{" "}
+                  <span className="text-[#004E98] font-inter font-semibold">Log in!</span>
                 </Link>
               </div>
             </Form>

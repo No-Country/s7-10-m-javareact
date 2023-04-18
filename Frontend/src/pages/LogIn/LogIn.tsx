@@ -9,6 +9,7 @@ import { LoginValues } from "../../models/LoginValues";
 import { loginSchema } from "../../validations/AuthValidations/AuthValidations";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { login, selectToken } from "../../app/state/userSlice";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function LogIn() {
   let dispatch = useAppDispatch();
@@ -18,7 +19,12 @@ export default function LogIn() {
     email: "",
     password: ""
   };
-  
+  const handleLogin = (values: any) => {
+    dispatch(login(values));
+    toast.success("Lorem ipsum dolor", {
+      theme: "colored"
+    });
+  };
 
   return (
     <div className="flex flex-col items-center justify-center px-4 mt-8 sm:px-6 lg:px-8 font-inter_regular">
@@ -39,7 +45,7 @@ export default function LogIn() {
         <Formik
           initialValues={INITIAL__VALUES__LOGIN__FORM}
           validationSchema={loginSchema}
-          onSubmit={values => dispatch(login(values))}
+          onSubmit={values => handleLogin(values)}
         >
           {({ errors, touched }) => (
             <Form className="">
@@ -80,13 +86,17 @@ export default function LogIn() {
               >
                 Log In
               </button>
-              <button className="text-center w-full	mt-4 text-[#004E98] font-inter font-semibold" type="button">
+              <button
+                className="text-center w-full	mt-4 text-[#004E98] font-inter font-semibold"
+                type="button"
+              >
                 Forgot your password?
               </button>
 
               <div className="w-100 flex items-center justify-center">
                 <Link to="/signup-client" className="w-full mt-4 self-center text-center	">
-                  Don't have an account yet? <span className="text-[#004E98] font-inter font-semibold">Sign up!</span>
+                  Don't have an account yet?{" "}
+                  <span className="text-[#004E98] font-inter font-semibold">Sign up!</span>
                 </Link>
               </div>
             </Form>

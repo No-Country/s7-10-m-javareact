@@ -19,7 +19,9 @@ const Provider = (props: Props) => {
           </div>
           <div className="justify-start bg-[#FF9A1F]">
             <div className="mx-4 py-4 text-start">
-              <p className="text-2xl py-2 font-semibold text-[#14213D] font-georama">Offer your services</p>
+              <p className="text-2xl py-2 font-semibold text-[#14213D] font-georama">
+                Offer your services
+              </p>
               <p className="text-xl font-inter">
                 Welcome to our platform for Home Repair Professionals! We're excited to help you
                 connect with homeowners in need of your expertise.
