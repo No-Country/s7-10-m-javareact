@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SetStateAction, useState } from "react";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -9,10 +9,10 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { logout, selectToken } from "../../app/state/userSlice";
 
 const navigation: Navigation[] = [
-  { name: "Home", href: "/", current: true }
-  /* { name: "Categories", href: "/professionals/", current: false }
-   { name: "FAQ", href: "/", current: false },
-  { name: "Search", href: "/", current: false } */
+  { name: "Home", href: "/", current: true },
+  { name: "Login", href: "/login", current: false },
+  { name: "Register", href: "/signup-client", current: false },
+  { name: "Work with us", href: "/signup-pro", current: false }
 ];
 
 interface Props {}
@@ -22,9 +22,16 @@ function classNames(...classes: string[]): string {
 }
 
 const Navbar = (props: Props) => {
+  const [currentNavItem, setCurrentNavItem] = useState(navigation[0]);
+  const handleNavItemChange = (item:SetStateAction<Navigation>) => {
+    setCurrentNavItem(item);
+    navigation.forEach((navItem) => {
+      navItem.current = navItem === item;
+    });
+  };
   let dispatch = useAppDispatch();
   let token = useAppSelector(selectToken);
-
+ 
   return (
     <div>
       <Disclosure as="nav" className="bg-white">
@@ -50,6 +57,7 @@ const Navbar = (props: Props) => {
                         <Link
                           key={item.name}
                           to={item.href}
+                          onClick={()=>handleNavItemChange(item)}
                           className={classNames(
                             item.current
                               ? "rounded-md px-3 py-2 text-sm font-medium bg-[#004E98]/70 text-white"

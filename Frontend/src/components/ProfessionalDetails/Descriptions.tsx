@@ -6,7 +6,7 @@ import { useAppSelector } from "../../app/hooks";
 type Props = {};
 
 const Descriptions = (props: Props) => {
-  let select = useAppSelector(selectProviderDescription)
+  let select = useAppSelector(selectProviderDescription);
   return (
     <div>
       <div className="text-start mx-8 py-4">

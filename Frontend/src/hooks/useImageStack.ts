@@ -18,15 +18,22 @@ import painter from "../assets/jobs/pintor.png";
 import wallCovering from "../assets/jobs/revestimientos pared.png";
 import floors from "../assets/jobs/suelo.png";
 import washerTechnician from "../assets/jobs/tecnico electrodomesticos-lavadora.png";
-import { MdCarpenter, MdConstruction, MdElderly, MdElectricBolt, MdPlumbing, MdRoofing } from "react-icons/md";
+import {
+  MdCarpenter,
+  MdConstruction,
+  MdElderly,
+  MdElectricBolt,
+  MdPlumbing,
+  MdRoofing
+} from "react-icons/md";
 import { TbLadder, TbMoodKid, TbWall } from "react-icons/tb";
 import { AiFillFormatPainter } from "react-icons/ai";
-import { IconType } from 'react-icons';
+import { IconType } from "react-icons";
 export interface ImageStack {
   id: number;
   image: string;
   title: string;
-  icon?:IconType;
+  icon?: IconType;
 }
 
 export const useImageStack = () => {
@@ -53,7 +60,6 @@ export const useImageStack = () => {
 
   return imageStack;
 };
-
 
 export interface ImageStack2 {
   id: number;
@@ -110,5 +116,5 @@ export const useImageStackWithIcon = (id?: number): ImageStack2[] => {
     { id: 18, image: washerTechnician, title: "Washer", icon: TbWall }
   ];
 
-  return imageStack;// return filtered image or null if no id is specified
+  return imageStack; // return filtered image or null if no id is specified
 };

@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { useApi, apiProps } from "../../hooks/useApi";
-import {Provider} from '../../models/Response';
-
-
+import { Provider } from "../../models/Response";
 
 interface ProviderState {
   status: string;
@@ -11,23 +9,23 @@ interface ProviderState {
 }
 
 export const initialUserState: ProviderState = {
-    status: "idle",
-    error: null,
-    provider: {
-      idUser: 0,
-      email: "",
-      fullName: "",
-      country: "",
-      experienceYears: "",
-      kmAround: "",
-      profileDescription: "",
-      score: 0,
-      categories: [],
-      profilePhoto: null,
-      galleryPhotos: [],
-      reviews: [],
-    },
-  };
+  status: "idle",
+  error: null,
+  provider: {
+    idUser: 0,
+    email: "",
+    fullName: "",
+    country: "",
+    experienceYears: "",
+    kmAround: "",
+    profileDescription: "",
+    score: 0,
+    categories: [],
+    profilePhoto: null,
+    galleryPhotos: [],
+    reviews: []
+  }
+};
 
 export interface Category {
   id: number;
@@ -65,7 +63,8 @@ export const providerSlice = createSlice({
   }
 });
 export const SelectStatusProvider = (state: { provider: ProviderState }) => state.provider.status;
-export const selectProviderDescription = (state: { provider: ProviderState }) => state.provider.provider.profileDescription;
+export const selectProviderDescription = (state: { provider: ProviderState }) =>
+  state.provider.provider.profileDescription;
 export const selectProviderHeader = (state: { provider: ProviderState }) => ({
   fullName: state.provider.provider.fullName,
   categories: state.provider.provider.categories,
@@ -74,5 +73,6 @@ export const selectProviderHeader = (state: { provider: ProviderState }) => ({
   country: state.provider.provider.country,
   score: state.provider.provider.score
 });
-export const selectProviderReviews = (state: { provider: ProviderState }) => state.provider.provider.reviews;
+export const selectProviderReviews = (state: { provider: ProviderState }) =>
+  state.provider.provider.reviews;
 export const SelectProvider = (state: { provider: ProviderState }) => state.provider.provider;

@@ -6,23 +6,25 @@ import { IoSaveOutline } from "react-icons/io5";
 import { useAppSelector } from "../../app/hooks";
 import { selectProviderHeader } from "../../app/state/providerSlice";
 
-
 const Header = () => {
-  let select = useAppSelector(selectProviderHeader)
+  let select = useAppSelector(selectProviderHeader);
   return (
     <>
       <div>
         <div>
           <div className="flex flex-row mx-3 justify-around">
             <div className="flex-col">
-              <img src={select.profilePhoto ? select.profilePhoto : data.picture} className="w-24 h-24 justify-start rounded-lg" />
+              <img
+                src={select.profilePhoto ? select.profilePhoto : data.picture}
+                className="w-24 h-24 justify-start rounded-lg"
+              />
             </div>
             <div className="flex-col py-2">
               <div className="py-2">{select.fullName}</div>
               <div className="py-2 text-xs opacity-70">
                 <ol>
                   <li>
-                    <span>{select.categories[0].name}</span>
+                    <span>{select.categories[0]?.name}</span>
                   </li>
                 </ol>
               </div>

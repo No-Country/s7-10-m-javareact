@@ -1,5 +1,3 @@
-
-
 export const HeaderCard = ({ profession }: any) => {
   return (
     <div>

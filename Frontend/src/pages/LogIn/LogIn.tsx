@@ -18,7 +18,7 @@ export default function LogIn() {
     email: "",
     password: ""
   };
-  console.log(token);
+  
 
   return (
     <div className="flex h-screen flex-col items-center justify-center px-4  sm:px-6 lg:px-8">

@@ -65,5 +65,6 @@ export const providersSlice = createSlice({
       });
   }
 });
-export const SelectStatusProviders = (state: { providers: ProviderState }) => state.providers.status;
+export const SelectStatusProviders = (state: { providers: ProviderState }) =>
+  state.providers.status;
 export const SelectProviders = (state: { providers: ProviderState }) => state.providers.providers;

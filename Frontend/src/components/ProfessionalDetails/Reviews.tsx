@@ -7,8 +7,8 @@ import { selectProviderReviews } from "../../app/state/providerSlice";
 type Props = {};
 
 const Reviews = (props: Props) => {
-   let select = useAppSelector(selectProviderReviews)
-   console.log(select)
+  let select = useAppSelector(selectProviderReviews);
+  console.log(select);
   const dataList = data.reviews;
   const reviewers = select.map((item, index): any => (
     <div key={index} className="py-4">
