@@ -6,12 +6,12 @@ type Props = {};
 
 const HireHeader = (props: Props) => {
   return (
-    <Link to={""}>
+    <Link to={"/professional/date/schedule"}>
       <div className="flex justify-around py-4">
         <div className="bg-blue-700 rounded-full mr-12 px-8 py-2 text-center align-content-center">
           <span className="mx-6 text-white text-center font-inter_italic">Hire</span>
         </div>
-        <div className="flex justify-end text-2xl mx-10">
+        <div className="flex justify-end text-4xl mx-10">
           <HiChatAlt2 className="text-blue-700" />
         </div>
       </div>

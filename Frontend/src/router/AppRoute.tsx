@@ -20,6 +20,7 @@ const ProfessionalHome = lazy(() => import("../pages/ProfessionalsHome/ProHome")
 const ProfessionalSchedule = lazy(
   () => import("../pages/ProfessionalSchedule/ProfessionalSchedule")
 );
+const ProfessionalDateSchedule = lazy(() => import("../pages/DateSchedule/DateSchedule"))
 
 export default function AppRoute() {
   return (
@@ -39,6 +40,7 @@ export default function AppRoute() {
               <Route path={PublicRoutes.ONBOARDINGPROVIDER} element={<Provider />} />
               <Route path={PublicRoutes.PROFESSIONALS} element={<Professionals />} />
               <Route path={PublicRoutes.PROFESSIONALDETAIL} element={<ProfessionalDetail />} />
+              <Route path={PublicRoutes.PROFESSIONALDATESCHEDULE} element={<ProfessionalDateSchedule />} />
               <Route path={PublicRoutes.PROFESSIONALHOME} element={<ProfessionalHome />} />
               <Route path={PublicRoutes.PROFESSIONALSCHEDULE} element={<ProfessionalSchedule />} />
             </Route>
