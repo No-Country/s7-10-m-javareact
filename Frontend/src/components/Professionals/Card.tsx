@@ -7,7 +7,7 @@ import { TbWashMachine, TbFridge, TbAirConditioning } from "react-icons/tb";
 import { BiDrink } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { useImageStackWithIcon } from '../../hooks/useImageStack';
-import { Category } from "../../app/state/providerSlice";
+import { Category } from "../../app/state/providersSlice";
 import { IconWrapper } from "./IconWrapper";
 import { IconType } from "react-icons";
 

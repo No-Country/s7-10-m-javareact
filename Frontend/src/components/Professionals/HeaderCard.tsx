@@ -1,5 +1,4 @@
-import React from "react";
-import { ImageStack } from "../../hooks/useImageStack";
+
 
 export const HeaderCard = ({ profession }: any) => {
   return (
