@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { SelectStatusProvider, getProvider } from "../../app/state/providerSlice";
 import Spinner from "../../components/Spinner/Spinner";
+import HireHeader from "../../components/ProfessionalDetails/HireHeader";
 
 type Props = {};
 
@@ -25,10 +26,11 @@ const ProfessionalDetail = (props: Props) => {
     }
   }, [dispatch, id]);
   return (
-    <div>
+    <div className="mx-2 md:mx-10">
       {status === "fulfilled" ? (
         <>
           <Header />
+          <HireHeader />
           <Descriptions />
           <FirstVisit />
           <Gallery />
