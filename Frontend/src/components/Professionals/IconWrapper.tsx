@@ -1,5 +1,5 @@
-import { FunctionComponent, SVGProps } from 'react';
-import { IconType } from 'react-icons';
+import { FunctionComponent, SVGProps } from "react";
+import { IconType } from "react-icons";
 
 interface IconWrapperProps {
   icon: FunctionComponent<SVGProps<SVGSVGElement>> | undefined;

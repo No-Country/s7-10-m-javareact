@@ -6,10 +6,11 @@ import {
   SelectProviders,
   SelectStatusProviders,
   getProviders
-} from "../../app/state/providerSlice";
+} from "../../app/state/providersSlice";
 import { useEffect, useRef } from "react";
 import { useImageStackById } from "../../hooks/useImageStack";
 import { HeaderCard } from "../../components/Professionals/HeaderCard";
+import Spinner from "../../components/Spinner/Spinner";
 
 export default function Professionals() {
   let dispatch = useAppDispatch();
@@ -26,7 +27,6 @@ export default function Professionals() {
       effectRan.current = true;
     }
   }, [dispatch, id]);
-console.log(select)
   return (
     <>
       <Link to={"/"}>
@@ -48,9 +48,12 @@ console.log(select)
           placeholder="Filter By"
         />
       </div>
-
-      {selectStatus === "fulfilled" &&
-        select.map((provider, index) => <Card key={index} provider={provider} />)}
+      {/* {selectStatus === 'pending' && <Spinner />} */}
+      {selectStatus === "fulfilled" ? (
+        select.map((provider, index) => <Card key={index} provider={provider} />)
+      ) : (
+        <Spinner />
+      )}
     </>
   );
 }

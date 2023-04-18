@@ -2,6 +2,7 @@ import { Table } from "../../components/Home/Table";
 import { Header } from "../../components/Home/Header";
 import StartNow from "../../components/Home/StartNow";
 import SearchForm from "../../components/Home/Search";
+import Spinner from "../../components/Spinner/Spinner";
 
 export default function Home() {
   return (
