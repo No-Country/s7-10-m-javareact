@@ -31,9 +31,10 @@ const AditionalInfo = (props: Props) => {
         <textarea
           id="problemDescription"
           name="problemDescription"
-          rows={3}
+          rows={10}
+          cols={50}
           className=" p-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
-          placeholder="Add any additional information here"
+          placeholder="Describe here the problem you have, what has happened and what needs to be fixed by the professional..."
         />
       </div>
 
@@ -45,13 +46,13 @@ const AditionalInfo = (props: Props) => {
         >
           Upload Images
         </label>
-        <div className="mt-1">
+        <div className="mt-1 border-gray-500 border-solid">
           <input
             id="image-upload"
             name="image-upload"
             type="file"
             accept="image/*"
-            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
+            className="shadow-sm focus:ring-indigo-500 h-[200px] focus:border-indigo-500 mt-1 block w-full sm:text-sm rounded-md"
           />
         </div>
       </div>
@@ -88,6 +89,7 @@ const AditionalInfo = (props: Props) => {
         </div>
       </div>
       {/* submit button */}
+
       <button
         type="submit"
         className="mt-8 items-center mx-auto bg-[#004E98] text-white py-2 px-4 rounded-md hover:bg-[#004E98]/70 transition-colors duration-300"

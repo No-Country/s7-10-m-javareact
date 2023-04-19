@@ -21,15 +21,15 @@ const Header = () => {
               />
             </div>
             <div className="flex-col py-2">
-              <div className="py-2 text-xs md:text-2xl">{select.fullName}</div>
-              <div className="py-2 text-xs md:text-lg opacity-70">
+              <div className="py-2 text-lg md:text-2xl">{select.fullName}</div>
+              <div className="py-2 text-sm md:text-lg opacity-70">
                 <ol>
                   <li>
                     <span>{select.categories[0]?.name}</span>
                   </li>
                 </ol>
               </div>
-              <div className="py-2 text-xs md:text-lg opacity-70">
+              <div className="py-2 text-sm md:text-lg opacity-70">
                 <ol>
                   <li>
                     <span>{select.experienceYears} experience</span>
@@ -38,13 +38,13 @@ const Header = () => {
               </div>
             </div>
             <div className="flex flex-col py-2">
-              <div className="py-2 text-xs md:text-2xl">
+              <div className="py-2 text-lg md:text-2xl">
                 <div className="flex place-items-center justify-around">
                   {select.score}
                   <BsStarHalf />
                 </div>
               </div>
-              <div className="py-2 text-xs md:text-lg opacity-70">
+              <div className="py-2 text-sm md:text-lg opacity-70">
                 <ol>
                   <li>
                     <span>{select.country}</span>
