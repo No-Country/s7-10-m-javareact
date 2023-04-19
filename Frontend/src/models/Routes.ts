@@ -7,6 +7,7 @@ export enum PublicRoutes {
   ONBOARDINGCLIENT = "onboarding/client",
   PROFESSIONALS = "professionals/:id?",
   PROFESSIONALDETAIL = "professional/detail/:id?",
+  PROFESSIONALDATESCHEDULE = "/professional/date/schedule",
   PROFESSIONALHOME = "/professional/home",
   PROFESSIONALSCHEDULE = "/professional/schedule"
 }

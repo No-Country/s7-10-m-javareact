@@ -5,7 +5,7 @@ import Layout from "../components/Layout/Layout";
 import AuthGuard from "./guards/AuthGuard";
 import { ToastContainer } from "react-toastify";
 
-const Spinner = lazy(() => import("../components/Spinner/Spinner"));
+const Spinner = lazy(() => import("../components/Spinner/SpinnerMain"));
 const Home = lazy(() => import("../pages/Home/Home"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
 const LogIn = lazy(() => import("../pages/LogIn/LogIn"));
@@ -20,6 +20,7 @@ const ProfessionalHome = lazy(() => import("../pages/ProfessionalsHome/ProHome")
 const ProfessionalSchedule = lazy(
   () => import("../pages/ProfessionalSchedule/ProfessionalSchedule")
 );
+const ProfessionalDateSchedule = lazy(() => import("../pages/DateSchedule/DateSchedule"));
 
 export default function AppRoute() {
   return (
@@ -39,6 +40,10 @@ export default function AppRoute() {
               <Route path={PublicRoutes.ONBOARDINGPROVIDER} element={<Provider />} />
               <Route path={PublicRoutes.PROFESSIONALS} element={<Professionals />} />
               <Route path={PublicRoutes.PROFESSIONALDETAIL} element={<ProfessionalDetail />} />
+              <Route
+                path={PublicRoutes.PROFESSIONALDATESCHEDULE}
+                element={<ProfessionalDateSchedule />}
+              />
               <Route path={PublicRoutes.PROFESSIONALHOME} element={<ProfessionalHome />} />
               <Route path={PublicRoutes.PROFESSIONALSCHEDULE} element={<ProfessionalSchedule />} />
             </Route>

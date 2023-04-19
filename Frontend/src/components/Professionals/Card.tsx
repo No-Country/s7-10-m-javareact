@@ -6,10 +6,10 @@ import Profile from "../../assets/profile.png";
 import { TbWashMachine, TbFridge, TbAirConditioning } from "react-icons/tb";
 import { BiDrink } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import { useImageStackWithIcon } from '../../hooks/useImageStack';
-import { Category } from "../../app/state/providerSlice";
+/* import { useImageStackWithIcon } from "../../hooks/useImageStack"; */
+import { Category } from "../../app/state/providersSlice";
 import { IconWrapper } from "./IconWrapper";
-import { IconType } from "react-icons";
+import { useRound } from "../../hooks/useRound";
 
 export const Card = ({ provider }: any) => {
   const [expanded, setExpanded] = useState(false);
@@ -22,13 +22,15 @@ export const Card = ({ provider }: any) => {
     idUser,
     profileDescription,
     profilePhoto,
-    score
+    score,
+    key
   } = provider;
   let navigate = useNavigate();
-  let professions = useImageStackWithIcon()
+  /*  let professions = useImageStackWithIcon(); */
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  
   return (
     <div
       className={`overflow-hidden transform bg-gray-100 w-[300px] rounded-md m-auto border-solid border-2 border-orange-500 duration-100 ease-out transition hover:animate-none flex flex-col justify-between mt-2 p-1 ${
@@ -36,12 +38,12 @@ export const Card = ({ provider }: any) => {
       }`}
     >
       <div className="flex">
-        <img className="p-2 w-16 h-16" src={profilePhoto === null ? Profile : Profile} />
+        <img className="p-2 w-16 h-16" src={profilePhoto} />
         <div className="align-middle content-center p-1 justify-between">
           <div className="flex center font-inter m-auto">
             <p className="w-28">{fullName}</p>
-            <p className="w-8">{score}</p>
-            <BsStarHalf />
+            <p className="w-8">{useRound(score)}</p>
+            <BsStarHalf className="mt-[2px]" />
             <ImFloppyDisk className="ml-10" />
           </div>
           <div className="flex center font-inter_regular text-xs m-auto">
@@ -69,20 +71,19 @@ export const Card = ({ provider }: any) => {
           <p className="font-inter text-md mr-1">Other trades: </p> Home appliance technician
         </span>
         <div className="flex justify-around text-3xl p-4	">
-        {categories.map((category: Category) => {
-          const profession = professions.find((p) => p.id === category.id);
-          const icon = profession?.icon;
-          console.log(profession?.icon)
-          if(icon){
-            return <IconWrapper key={profession?.id} icon={icon} />
-          }
-          ;
-        })}
-  {/*         <TbWashMachine />
+          {/* Aca esta como seria conectado a backend */}
+          {/*           {categories.map((category: Category) => {
+            const profession = professions.find(p => p.id === category.id);
+            const icon = profession?.icon;
+            
+            if (icon) {
+              return <IconWrapper key={profession?.id} icon={icon} />;
+            }
+          })} */}
+          <TbWashMachine />
           <TbFridge />
           <BiDrink />
           <TbAirConditioning />
-          <img src="" alt="" /> */}
         </div>
       </div>
       <div
