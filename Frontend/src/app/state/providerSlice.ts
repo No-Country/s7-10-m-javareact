@@ -73,6 +73,11 @@ export const selectProviderHeader = (state: { provider: ProviderState }) => ({
   country: state.provider.provider.country,
   score: state.provider.provider.score
 });
+export const selectProviderId = (state: { provider: ProviderState }) => ({
+  idUser: state.provider.provider.idUser
+});
 export const selectProviderReviews = (state: { provider: ProviderState }) =>
   state.provider.provider.reviews;
+export const selectProviderName = (state: { provider: ProviderState }) =>
+  state.provider.provider.fullName;
 export const SelectProvider = (state: { provider: ProviderState }) => state.provider.provider;

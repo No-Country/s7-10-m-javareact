@@ -26,7 +26,7 @@ const ProfessionalDetail = (props: Props) => {
     }
   }, [dispatch, id]);
   return (
-    <div className="mx-2 md:mx-10">
+    <div className="m-auto max-w-7xl">
       {status === "fulfilled" ? (
         <>
           <Header />

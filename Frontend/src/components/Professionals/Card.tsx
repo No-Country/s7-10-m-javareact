@@ -22,14 +22,15 @@ export const Card = ({ provider }: any) => {
     idUser,
     profileDescription,
     profilePhoto,
-    score
+    score,
+    key
   } = provider;
   let navigate = useNavigate();
   /*  let professions = useImageStackWithIcon(); */
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
+  
   return (
     <div
       className={`overflow-hidden transform bg-gray-100 w-[300px] rounded-md m-auto border-solid border-2 border-orange-500 duration-100 ease-out transition hover:animate-none flex flex-col justify-between mt-2 p-1 ${
@@ -37,7 +38,7 @@ export const Card = ({ provider }: any) => {
       }`}
     >
       <div className="flex">
-        <img className="p-2 w-16 h-16" src={profilePhoto === null ? Profile : Profile} />
+        <img className="p-2 w-16 h-16" src={profilePhoto} />
         <div className="align-middle content-center p-1 justify-between">
           <div className="flex center font-inter m-auto">
             <p className="w-28">{fullName}</p>
