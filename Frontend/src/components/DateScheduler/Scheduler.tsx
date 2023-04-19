@@ -35,7 +35,7 @@ const timeOptions = [
   "12:00 HS"
 ];
 
-const Scheduler = () => {
+const Scheduler = (/* {setTime,setDate}:any */) => {
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string>("");
 
@@ -44,10 +44,12 @@ const Scheduler = () => {
 
   const handleDateChange = (date: Date | null) => {
     setStartDate(date);
+    /* setDate(date) */
   };
 
   const handleTimeSelection = (time: string) => {
     setSelectedTime(time);
+    /* setTime(time) */
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -84,14 +86,14 @@ const Scheduler = () => {
           <DatePicker
             selected={startDate}
             onChange={handleDateChange}
-            dateFormat="MMMM d, yyyy"
+            dateFormat="yyyy-MM-dd"
             placeholderText="Select a date"
             minDate={new Date()}
             className="rounded-md border-gray-300 border px-4 py-2 text-sm"
           />
         </div>
         <div className="mt-8 mx-auto w-[400px]">
-          <p className=" flex justify-center text-2xl font-medium text-gray-700 mb-2">
+          <p className=" flex justify-center text-2xl font-medium font-georama text-gray-700 mb-2">
             Select a time:
           </p>
           <div className="flex flex-wrap justify-center mx-auto">
@@ -101,9 +103,10 @@ const Scheduler = () => {
                   key={time}
                   type="button"
                   className={`${
-                    selectedTime === time ? "bg-indigo-500" : "bg-gray-200"
+                    selectedTime === time ? "bg-[#004E98] text-white" : "bg-gray-200"
                   } py-2 px-4 text-sm font-medium text-gray-700 rounded-full mr-4 mb-4 focus:outline-none`}
-                  onClick={() => handleTimeSelection(time)}>
+                  onClick={() => handleTimeSelection(time)}
+                >
                   {time}
                 </button>
               </div>
@@ -112,12 +115,13 @@ const Scheduler = () => {
         </div>
         <button
           type="submit"
-          className="mt-8 bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 transition-colors duration-300">
+          className="mt-8 bg-[#004E98]  font-georama text-white py-2 px-4 rounded-md hover:bg-[#004E98]/70 transition-colors duration-300"
+        >
           Send Request
         </button>
       </form>
       {showModal && (
-        <div className="fixed z-10 inset-0 overflow-y-auto">
+        <div className="fixed z-10 inset-0 overflow-y-auto font-inter">
           <div className="flex items-center justify-center min-h-screen">
             <div className="fixed inset-0 bg-gray-500 opacity-75"></div>
             <div className="bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
@@ -137,7 +141,8 @@ const Scheduler = () => {
                 <button
                   type="button"
                   className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
-                  onClick={() => setShowModal(false)}>
+                  onClick={() => setShowModal(false)}
+                >
                   Go back
                 </button>
               </div>

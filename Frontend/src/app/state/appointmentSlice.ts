@@ -11,12 +11,18 @@ interface ServiceRequest {
 interface ServiceRequested {
   status: string;
   error: null | string;
-  service: string;
+  service: ServiceRequest;
 }
 export const initialUserState: ServiceRequested = {
   status: "idle",
   error: null,
-  service: "idle"
+  service: {
+    idClient: 0,
+    idServiceProvider: 0,
+    problemDescription: "",
+    problemPhotos: [""],
+    date: ""
+  }
 };
 
 export const postRequest = createAsyncThunk(
@@ -30,7 +36,7 @@ export const postRequest = createAsyncThunk(
   }: ServiceRequest) => {
     const apiProps: apiProps = {
       path: `appointment`,
-      method: "get",
+      method: "post",
       body: {
         idClient: idClient,
         idServiceProvider: idServiceProvider,
@@ -63,7 +69,8 @@ export const RequestSlice = createSlice({
       });
   }
 });
-
+export const SelectProviders = (state: { service: ServiceRequested }) => state.service;
+/* export const SelectStatusProviders = (state: { service: ServiceRequested }) => state.status; */
 /* // Selectors 
  export const SelectProviders = (state: { service: ServiceRequested }) => state.service;
  export const SelectStatusProviders = (state: { service: ServiceRequested }) => state.status;

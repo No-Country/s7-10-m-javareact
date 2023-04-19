@@ -68,6 +68,7 @@ export const userSlice = createSlice({
 export const { logout } = userSlice.actions;
 
 export const selectFullname = (state: { user: UserState }) => state.user.fullName;
+export const selectIdUser = (state: { user: UserState }) => state.user.idUser;
 export const selectToken = (state: { user: UserState }) => state.user?.token;
 export const selectStatus = (state: { user: UserState }) => state.user.status;
 export const selectError = (state: { user: UserState }) => state.user.error;

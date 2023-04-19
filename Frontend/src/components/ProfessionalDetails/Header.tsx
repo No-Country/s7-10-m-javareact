@@ -6,7 +6,7 @@ import { IoSaveOutline } from "react-icons/io5";
 import { useAppSelector } from "../../app/hooks";
 import { selectProviderHeader } from "../../app/state/providerSlice";
 import { BsStarHalf } from "react-icons/bs";
-
+import picture from "../../assets/profile.png";
 const Header = () => {
   let select = useAppSelector(selectProviderHeader);
   return (
@@ -16,7 +16,7 @@ const Header = () => {
           <div className="flex flex-row justify-around">
             <div className="flex-col">
               <img
-                src={select.profilePhoto ? select.profilePhoto : data.picture}
+                src={select.profilePhoto ? select.profilePhoto : picture}
                 className="w-24 h-24 md:h-36 md:w-36 justify-start rounded-lg"
               />
             </div>

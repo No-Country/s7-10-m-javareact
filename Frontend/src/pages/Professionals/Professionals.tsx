@@ -11,13 +11,15 @@ import { useEffect, useRef } from "react";
 import { useImageStackById } from "../../hooks/useImageStack";
 import { HeaderCard } from "../../components/Professionals/HeaderCard";
 import Spinner from "../../components/Spinner/Spinner";
+import data from "../../hooks/useData";
 
 export default function Professionals() {
   let dispatch = useAppDispatch();
+
   let { id } = useParams();
   let selectStatus = useAppSelector(SelectStatusProviders);
   let select = useAppSelector(SelectProviders);
-
+ 
   const profession = useImageStackById(parseInt(id ?? ""));
   const effectRan = useRef(false);
   useEffect(() => {
@@ -54,6 +56,7 @@ export default function Professionals() {
       ) : (
         <Spinner />
       )}
+        {data.map((provider, index) => <Card key={index} provider={provider} />)}
     </>
   );
 }
