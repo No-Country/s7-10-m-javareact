@@ -16,8 +16,11 @@ Back End:
 
 
 -        Links:
+
 Deploy: https://home-hero.vercel.app/
+
 Video Promocional:
+
 Figma: https://www.figma.com/file/7wxsjKXNyK7vPJVJclAfwp/No-Country-s7-10-m-javareact?node-id=1%3A2&t=1Y7GsC006nfgxZoW-1
 
  Prototipo Figma: https://www.figma.com/proto/7wxsjKXNyK7vPJVJclAfwp/No-Country-s7-10-m-javareact?page-id=1%3A2&node-id=169-57&viewport=-1426%2C-8%2C0.25&scaling=scale-down&starting-point-node-id=169%3A57
