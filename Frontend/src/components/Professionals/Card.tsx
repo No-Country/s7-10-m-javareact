@@ -38,7 +38,7 @@ export const Card = ({ provider }: any) => {
       }`}
     >
       <div className="flex">
-        <img className="p-2 w-16 h-16" src={profilePhoto} />
+        <img className="p-2 w-16 h-16" src={profilePhoto ? profilePhoto : Profile} />
         <div className="align-middle content-center p-1 justify-between">
           <div className="flex center font-inter m-auto">
             <p className="w-28">{fullName}</p>
