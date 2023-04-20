@@ -11,8 +11,8 @@ QA: Fausto Centurión
 
 -        Tecnologías usadas por roles:
 UX/UI: Figma, Adobe Creative Suit
-Front End:
-Back End:
+Front End: ReactJs, ViteJs, ReactRouter DOM, Redux Toolkit, react-Icons, TailwindCSS, Formik
+Back End: Java, Spring Boot, Hibernate, Maven, Spring Security, Validation, Lombok, JWT, MySQL
 
 
 -        Links:
