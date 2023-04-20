@@ -11,8 +11,8 @@ import { logout, selectToken } from "../../app/state/userSlice";
 const navigation: Navigation[] = [
   { name: "Home", href: "/", current: true },
   { name: "Login", href: "/login", current: false },
-  { name: "Register", href: "/signup-client", current: false },
-  { name: "Work with us", href: "/signup-pro", current: false }
+  { name: "Hire a pro", href: "/onboarding/client", current: false },
+  { name: "Work with us", href: "/onboarding/provider", current: false }
 ];
 
 interface Props {}
