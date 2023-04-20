@@ -1,40 +1,6 @@
 import profile from '../assets/profile.png'
 const data = [
-    {
-      idUser: 10,
-      email: "usertest2@htm.cuak",
-      fullName: "Laura",
-      country: "Santiago de Chile",
-      experienceYears: 5,
-      kmAround: 15,
-      profileDescription:
-        "Hi, I'm Laura, a certified electrician with 5 years of experience in residential and commercial electrical systems. I have a strong commitment to safety, quality workmanship, and customer satisfaction.",
-      score: 4.75,
-      categories: [
-        {
-          id: 2,
-          name: "Electrician",
-        },
-      ],
-      profilePhoto: 'https://res.cloudinary.com/duk7zris0/image/upload/v1681923801/profile5_qzkrsh.png',
-      galleryPhotos: ['../assets/profile2.png'],
-      reviews: [
-        {
-          comment:
-            "Laura was great to work with! She was prompt, professional, and did a fantastic job with our electrical installation. We highly recommend her services!",
-          rating: 5.0,
-          nameClient: "Diego",
-          creationDate: "2023-04-18",
-        },
-        {
-          comment:
-            "Laura is an excellent electrician. She was very knowledgeable and patient, answering all of our questions and concerns. We will definitely be using her services again in the future!",
-          rating: 4.5,
-          nameClient: "Maria",
-          creationDate: "2023-04-18",
-        },
-      ],
-    },
+    
     {
       idUser: 13,
       email: "usertest3@htm.cuak",
@@ -51,7 +17,7 @@ const data = [
           name: "Plumbing",
         },
       ],
-      profilePhoto: 'https://res.cloudinary.com/duk7zris0/image/upload/v1681923791/profile_zkhcmz.png',
+      profilePhoto: 'https://res.cloudinary.com/duk7zris0/image/upload/v1681994935/profile_1_nfotfk.png',
       galleryPhotos: ['../assets/profile3.png'],
       reviews: [
         {
@@ -66,6 +32,40 @@ const data = [
             "Carlos did a great job fixing our leaky faucet. He was very knowledgeable and took the time to explain what he was doing. Would definitely use his services again!",
           rating: 3.5,
           nameClient: "Isabella",
+          creationDate: "2023-04-18",
+        },
+      ],
+    },{
+      idUser: 10,
+      email: "usertest2@htm.cuak",
+      fullName: "Laura",
+      country: "Santiago de Chile",
+      experienceYears: 5,
+      kmAround: 15,
+      profileDescription:
+        "Hi, I'm Laura, a certified electrician with 5 years of experience in residential and commercial electrical systems. I have a strong commitment to safety, quality workmanship, and customer satisfaction.",
+      score: 4.75,
+      categories: [
+        {
+          id: 2,
+          name: "Electrician",
+        },
+      ],
+      profilePhoto: 'https://res.cloudinary.com/duk7zris0/image/upload/v1681994935/profile_4_lgkw6s.png',
+      galleryPhotos: ['../assets/profile2.png'],
+      reviews: [
+        {
+          comment:
+            "Laura was great to work with! She was prompt, professional, and did a fantastic job with our electrical installation. We highly recommend her services!",
+          rating: 5.0,
+          nameClient: "Diego",
+          creationDate: "2023-04-18",
+        },
+        {
+          comment:
+            "Laura is an excellent electrician. She was very knowledgeable and patient, answering all of our questions and concerns. We will definitely be using her services again in the future!",
+          rating: 4.5,
+          nameClient: "Maria",
           creationDate: "2023-04-18",
         },
       ],
@@ -85,7 +85,7 @@ const data = [
             name: "Electrician",
           },
         ],
-        profilePhoto: 'https://res.cloudinary.com/duk7zris0/image/upload/v1681923791/profile4_yansq4.png',
+        profilePhoto: 'https://res.cloudinary.com/duk7zris0/image/upload/v1681994935/profile_2_vfeavv.png',
         galleryPhotos: ['../assets/profile4.png'],
         reviews: [
           {
@@ -120,7 +120,7 @@ const data = [
             name: "Plumbing",
           },
         ],
-        profilePhoto: 'https://res.cloudinary.com/duk7zris0/image/upload/v1681923791/profile2_v3jztx.png',
+        profilePhoto: 'https://res.cloudinary.com/duk7zris0/image/upload/v1681994935/profile_5_vmmv2u.png',
         galleryPhotos: ['../assets/profile5.png'],
         reviews: [
           {
@@ -155,7 +155,7 @@ const data = [
             name: "Plumbing",
           },
         ],
-        profilePhoto: 'https://res.cloudinary.com/duk7zris0/image/upload/v1681923791/profile3_x6qcoj.png',
+        profilePhoto: 'https://res.cloudinary.com/duk7zris0/image/upload/v1681994935/profile_3_o2kew3.png',
         galleryPhotos: ['../assets/profile5.png'],
         reviews: [
           {
