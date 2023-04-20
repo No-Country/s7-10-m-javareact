@@ -51,11 +51,11 @@ export default function Professionals() {
         />
       </div>
       {/* {selectStatus === 'pending' && <Spinner />} */}
-      {selectStatus === "fulfilled" ? (
+     {/*  {selectStatus === "fulfilled" ? (
         select.map((provider, index) => <Card key={index} provider={provider} />)
       ) : (
         <Spinner />
-      )}
+      )} */}
         {data.map((provider, index) => <Card key={index} provider={provider} />)}
     </>
   );
