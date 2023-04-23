@@ -52,7 +52,7 @@ Tiene todas las funcionalidades:
 - Como usuario podré acceder al perfil de los profesionales y ver los servicios que tienen publicados, reseñas, galería de imágenes, etc.
 - El usuario podrá darse de baja en la plataforma, y se le cambiará su status a inactivo pero permanecerán sus registros.
 
-PROFESIONAL:
+PROFESIONAL (pendiente finalizar implentación):
 - El profesor es también un usuario para poder registrarse y tener su perfil, solo que con le aparece una homepage distinta, con su dashboard para poder editar su disponibilidad en el calendario y visualizar sus peticiones de citas.
 - El profesional podrá decir a qué horas y que días está disponible para las citas con los clientes, para que éstos puedan agendarlas.
 - En la pantalla de peticiones podrá visualizar las que tiene aprobadas y las pendientes, donde aparece el nombre de cliente, la dirección, la descripción de lo que le ocurre y algunas fotos sobre la avería, así  como la fecha de de la cita.
