@@ -4,6 +4,9 @@ import { PrivateRoutes, PublicRoutes } from "../models/Routes";
 import Layout from "../components/Layout/Layout";
 import AuthGuard from "./guards/AuthGuard";
 import { ToastContainer } from "react-toastify";
+import { Requests } from "../pages/Requests/Requests";
+import { Settings } from "../pages/Settings/Settings";
+import { Schedule } from "../pages/Schedule/Schedule";
 
 const Spinner = lazy(() => import("../components/Spinner/SpinnerMain"));
 const Home = lazy(() => import("../pages/Home/Home"));
@@ -30,9 +33,11 @@ export default function AppRoute() {
           <Routes>
             <Route path={PublicRoutes.HOME} element={<Home />} />
             <Route element={<AuthGuard privateValidation={"must-logIn"} />}>
-              <Route path={PrivateRoutes.PROFILE} element={<Profile />} />
+              {/* <Route path={PrivateRoutes.PROFILE} element={<Profile />} /> */}
             </Route>
             <Route element={<AuthGuard privateValidation={"must-not-logIn"} />}>
+              <Route path={PublicRoutes.PROFILE} element={<Profile />} />
+              <Route path={PublicRoutes.SETTINGS} element={<Settings />} />
               <Route path={PublicRoutes.LOGIN} element={<LogIn />} />
               <Route path={PublicRoutes.SIGNUPCLIENT} element={<SignUpClient />} />
               <Route path={PublicRoutes.SIGNUPPRO} element={<SignUpPro />} />
@@ -46,6 +51,8 @@ export default function AppRoute() {
               />
               <Route path={PublicRoutes.PROFESSIONALHOME} element={<ProfessionalHome />} />
               <Route path={PublicRoutes.PROFESSIONALSCHEDULE} element={<ProfessionalSchedule />} />
+              <Route path={PublicRoutes.REQUEST} element={<Requests />} />
+              <Route path={PublicRoutes.SCHEDULE} element={<Schedule />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -8,23 +8,14 @@ import { BiDrink } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 /* import { useImageStackWithIcon } from "../../hooks/useImageStack"; */
 import { Category } from "../../app/state/providersSlice";
-import { IconWrapper } from "./IconWrapper";
-import { useRound } from "../../hooks/useRound";
 
-export const Card = ({ provider }: any) => {
+import { useRound } from "../../hooks/useRound";
+import { IconWrapper } from "../Professionals/IconWrapper";
+
+export const RequestCard = ({ provider }: any) => {
   const [expanded, setExpanded] = useState(false);
-  const {
-    categories,
-    country,
-    email,
-    experienceYears,
-    fullName,
-    idUser,
-    profileDescription,
-    profilePhoto,
-    score,
-    key
-  } = provider;
+  const { fullName, date, hour, address, since, profileUrl, description, photos } = provider;
+  console.log(since);
   let navigate = useNavigate();
   /*  let professions = useImageStackWithIcon(); */
   const handleExpandClick = () => {
@@ -38,38 +29,32 @@ export const Card = ({ provider }: any) => {
       }`}
     >
       <div className="flex">
-        <img className="p-2 w-16 h-16" src={profilePhoto ? profilePhoto : Profile} />
+        <img className="p-2 w-16 h-16" src={profileUrl ? profileUrl : Profile} />
         <div className="align-middle content-center p-1 justify-between">
-          <div className="flex center font-inter m-auto">
+          <div className="flex font-inter m-auto text-sm">
             <p className="w-28">{fullName}</p>
-            <p className="w-8">{useRound(score)}</p>
-            <BsStarHalf className="mt-[2px]" />
-            <ImFloppyDisk className="ml-10" />
+            <p className="ml-10">{since}</p>
           </div>
           <div className="flex center font-inter_regular text-xs m-auto">
-            <p className="w-full">
-              {categories && categories[0].name} • {country} •
+            <p className="w-full mt-3 ">
+              • {date} • {hour}
             </p>
-          </div>
-          <div className="flex font-inter_regular justify-between m-auto text-xs p-1">
-            <p className="w-15">{experienceYears}</p>
-            <div className="flex w-20  float-left">
-              <ImFacebook2 className="ml-1 mt-0.5 text-md" />
-              <ImInstagram className="ml-1 mt-0.5 text-md" />
+            <div className="flex font-inter_regular justify-end m-auto text-xs p-1">
+              <button className={` w-[18px] h-[21px]`} onClick={handleExpandClick}>
+                <MdOutlineArrowDropDown
+                  className={`ml-3 mt-6 text-lg ${expanded ? "hidden" : ""}`}
+                />
+              </button>
             </div>
-
-            <button className={` w-[18px] h-[21px]`} onClick={handleExpandClick}>
-              <MdOutlineArrowDropDown className={`m-0 mt-1 text-lg ${expanded ? "hidden" : ""}`} />
-            </button>
           </div>
         </div>
       </div>
 
       <div className="font-inter_regular text-xs p-1.5">
-        <p>{profileDescription}</p>
-        <span className="flex mt-2">
-          <p className="font-inter text-md mr-1">Other trades: </p> Home appliance technician
-        </span>
+        <p>{/* {profileDescription} */}</p>
+
+        <p className="font-inter text-md mr-1">{description} </p>
+
         <div className="flex justify-around text-3xl p-4	">
           {/* Aca esta como seria conectado a backend */}
           {/*           {categories.map((category: Category) => {
@@ -80,20 +65,9 @@ export const Card = ({ provider }: any) => {
               return <IconWrapper key={profession?.id} icon={icon} />;
             }
           })} */}
-          <TbWashMachine />
-          <TbFridge />
-          <BiDrink />
-          <TbAirConditioning />
-        </div>
-      </div>
-      <div
-        onClick={() => navigate(`/professional/detail/${idUser}`)}
-        className="cursor-pointer max-w-[140px] ml-5"
-      >
-        <div className="">
-          <p className="border-2 border-solid text-xs px-5 font-normal rounded-[32px] text-center py-2 transition hover:bg-gray-300 border-orange-500 text-orange-500">
-            Show more
-          </p>
+          {photos.map((image: string) => (
+            <img className="w-16 h-16" src={image} alt="" />
+          ))}
         </div>
       </div>
       <button className="flex justify-end mb-2" onClick={handleExpandClick}>

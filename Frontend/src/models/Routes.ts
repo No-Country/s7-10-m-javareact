@@ -9,9 +9,13 @@ export enum PublicRoutes {
   PROFESSIONALDETAIL = "professional/detail/:id?",
   PROFESSIONALDATESCHEDULE = "/professional/date/schedule",
   PROFESSIONALHOME = "/professional/home",
-  PROFESSIONALSCHEDULE = "/professional/schedule"
+  PROFESSIONALSCHEDULE = "/professional/schedule",
+  REQUEST = "/request",
+  PROFILE = "profile",
+  SETTINGS = "settings",
+  SCHEDULE = "schedule"
 }
 
 export enum PrivateRoutes {
-  PROFILE = "profile"
+  PROFILE = ""
 }

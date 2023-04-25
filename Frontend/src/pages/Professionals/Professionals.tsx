@@ -19,7 +19,7 @@ export default function Professionals() {
   let { id } = useParams();
   let selectStatus = useAppSelector(SelectStatusProviders);
   let select = useAppSelector(SelectProviders);
- 
+
   const profession = useImageStackById(parseInt(id ?? ""));
   const effectRan = useRef(false);
   useEffect(() => {
@@ -51,12 +51,14 @@ export default function Professionals() {
         />
       </div>
       {/* {selectStatus === 'pending' && <Spinner />} */}
-     {/*  {selectStatus === "fulfilled" ? (
+      {/*  {selectStatus === "fulfilled" ? (
         select.map((provider, index) => <Card key={index} provider={provider} />)
       ) : (
         <Spinner />
       )} */}
-        {data.map((provider, index) => <Card key={index} provider={provider} />)}
+      {data.map((provider, index) => (
+        <Card key={index} provider={provider} />
+      ))}
     </>
   );
 }
